@@ -168,3 +168,28 @@ document.addEventListener('DOMContentLoaded', () => {
                 modal.style.display = 'none';
             }
         });
+
+        // Image Modal functionality
+        const imgModal = document.getElementById('image-modal');
+        const expandedImg = document.getElementById('expanded-img');
+        const imgCaption = document.getElementById('img-caption');
+        const closeImgBtn = document.querySelector('.close-img');
+        const pictures = document.querySelectorAll('.picture-frame img');
+
+        pictures.forEach(img => {
+            img.addEventListener('click', () => {
+                imgModal.style.display = 'block';
+                expandedImg.src = img.src;
+                imgCaption.textContent = img.alt;
+            });
+        });
+
+        closeImgBtn.addEventListener('click', () => {
+            imgModal.style.display = 'none';
+        });
+
+        window.addEventListener('click', (event) => {
+            if (event.target === imgModal) {
+                imgModal.style.display = 'none';
+            }
+        });
