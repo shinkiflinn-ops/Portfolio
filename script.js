@@ -28,20 +28,28 @@ document.addEventListener('DOMContentLoaded', () => {
     const langToggle = document.getElementById('lang-toggle');
     let currentLang = 'fr';
 
-    langToggle.addEventListener('click', () => {
-        currentLang = currentLang === 'fr' ? 'en' : 'fr';
+    const updateLanguage = () => {
         document.querySelectorAll('[data-en]').forEach(el => {
-            const icon = el.querySelector('i');
             const text = el.getAttribute(`data-${currentLang}`);
-            if (icon) {
-                el.innerHTML = '';
-                el.appendChild(icon);
-                el.appendChild(document.createTextNode(' ' + text));
+            
+            // Check if there are nested elements like <span> or <i>
+            const hasNested = el.children.length > 0;
+            
+            if (hasNested) {
+                // Handle complex elements (like <h1> with <span> or <a> with <i>)
+                // We recreate the inner structure if it's a simple case of [text] + [element] or vice-versa
+                // But for most cases here, we can just replace the text node(s) or use innerHTML if we trust the data- attributes
+                el.innerHTML = text;
             } else {
                 el.textContent = text;
             }
         });
         langToggle.textContent = currentLang === 'fr' ? 'EN / FR' : 'FR / EN';
+    };
+
+    langToggle.addEventListener('click', () => {
+        currentLang = currentLang === 'fr' ? 'en' : 'fr';
+        updateLanguage();
     });
 
     // Typing effect for terminal
@@ -132,8 +140,11 @@ document.addEventListener('DOMContentLoaded', () => {
         root.style.setProperty('--accent-color', '#00ff00');
         terminal.style.color = '#00ff00';
 
-        const newText = "\n[SYSTEM] : INITIALIZING JOJO_JAMBO_CORE.EXE...\n[WARNING] : OVERCLOCKING DETECTED\n[OK] : PERFORMANCE LIMITS REMOVED\nroot@portfolio:~/$ _";
-        typeAppend(terminal, newText, 100);
+        const initMsg = currentLang === 'fr' ? 
+            "\n[SYSTÈME] : INITIALISATION DE JOJO_JAMBO_CORE.EXE...\n[ATTENTION] : OVERCLOCKING DÉTECTÉ\n[OK] : LIMITES DE PERFORMANCE SUPPRIMÉES\nroot@portfolio:~/$ _" :
+            "\n[SYSTEM] : INITIALIZING JOJO_JAMBO_CORE.EXE...\n[WARNING] : OVERCLOCKING DETECTED\n[OK] : PERFORMANCE LIMITS REMOVED\nroot@portfolio:~/$ _";
+        
+        typeAppend(terminal, initMsg, 100);
 
         panel.classList.add('overclock-active');
         panel.classList.add('glow-active');
@@ -142,7 +153,7 @@ document.addEventListener('DOMContentLoaded', () => {
             terminal.classList.remove('glitch-active');
         }, 5000);
 
-        playBtn.textContent = "RUNNING";
+        playBtn.textContent = currentLang === 'fr' ? "EN COURS" : "RUNNING";
         playBtn.style.borderColor = "#00ff00";
         playBtn.style.color = "#00ff00";
         playBtn.classList.add('flash-active');
