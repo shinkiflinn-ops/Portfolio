@@ -4,6 +4,11 @@
 
 **Candidature pour Master / Stage en Programmation de Jeux Vidéo et Systèmes Embarqués**
 
+**Profil**
+Étudiant en Génie Électrique avec une spécialisation progressive vers le développement de jeux vidéo et les systèmes interactifs. Je développe des projets combinant programmation, logique et création visuelle, avec une attention particulière à l'optimisation, à la conception de systèmes et à l'expérience utilisateur.
+
+🎯 **Objectif :** Intégrer un master spécialisé en jeu vidéo afin de renforcer mes compétences en game development, game design et production interactive, et contribuer à des projets ambitieux.
+
 **Compétences**
 - Développement et Algorithmique : Programmation orientée objet (C++), GDScript, Conception d'algorithmes et optimisation.
 - Moteurs de Jeu et Outils : Godot Engine, Git, GitHub Pages.
