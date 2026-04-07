@@ -163,55 +163,63 @@
                 margin: 12mm 14mm 10mm 14mm;
             }
 
-            /* Masque les en-têtes/pieds de page navigateur */
             html { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
 
             .print-bar { display: none !important; }
 
             body {
                 background: white !important;
-                color: #111 !important;
                 font-size: 9.5pt;
                 line-height: 1.4;
             }
 
-            .cv-page { margin: 0; padding: 0; max-width: 100%; }
-
-            .cv-header {
-                border-bottom-color: #2563eb !important;
-                padding-bottom: 8px;
-                margin-bottom: 10px;
+            /* ── Reset universel : tout le cv devient noir sur blanc ── */
+            .cv-page, .cv-page * {
+                color: #111 !important;
+                background: transparent !important;
+                border-color: #ccc !important;
             }
-            .cv-header h1 { font-size: 16pt; color: #1a3a7a !important; }
-            .cv-header .role { color: #444 !important; font-size: 8pt; margin: 2px 0 7px; }
-            .contact-row { font-size: 8pt; color: #444 !important; gap: 6px 16px; }
+
+            /* ── Re-coloration sélective (bleu marine) ── */
+            .cv-header h1,
+            .cv-section h2,
+            .skills-list strong,
+            .entry ul li::before,
+            .profil-accent,
+            .lang-item strong,
             .contact-row a { color: #1a3a7a !important; }
 
-            .profil-text { color: #111 !important; font-size: 8.5pt; }
-            .profil-accent { color: #1a3a7a !important; }
+            /* ── Muted (gris) ── */
+            .cv-header .role,
+            .contact-row,
+            .entry-date,
+            .entry-sub,
+            .lang-item span { color: #555 !important; }
+
+            /* ── Tailles ── */
+            .cv-page { margin: 0; padding: 0; max-width: 100%; }
+
+            .cv-header { padding-bottom: 8px; margin-bottom: 10px; }
+            .cv-header h1 { font-size: 16pt; }
+            .cv-header .role { font-size: 8pt; margin: 2px 0 7px; }
+            .contact-row { font-size: 8pt; gap: 6px 16px; }
 
             .cv-section { margin-bottom: 8px; }
-            .cv-section h2 {
-                font-size: 7pt;
-                color: #1a3a7a !important;
-                border-color: #ccc !important;
-                padding-bottom: 3px;
-                margin-bottom: 6px;
-            }
+            .cv-section h2 { font-size: 7pt; padding-bottom: 3px; margin-bottom: 6px; }
 
-            .skills-list li { font-size: 8.5pt; color: #111 !important; border-color: #ddd !important; padding: 1.5px 0; }
-            .skills-list strong { color: #1a3a7a !important; }
+            .profil-text { font-size: 8.5pt; }
+
+            .skills-list li { font-size: 8.5pt; padding: 1.5px 0; }
 
             .entry { margin-bottom: 7px; page-break-inside: avoid; }
-            .entry-header h3 { font-size: 8.5pt; color: #111 !important; }
-            .entry-date { font-size: 7.5pt; color: #555 !important; }
-            .entry-sub { font-size: 7.5pt; color: #555 !important; margin-bottom: 2px; }
-            .entry ul li { font-size: 8pt; color: #222 !important; padding: 1px 0 1px 12px; }
-            .entry ul li::before { color: #1a3a7a !important; font-size: 7pt; top: 2px; }
+            .entry-header h3 { font-size: 8.5pt; }
+            .entry-date { font-size: 7.5pt; }
+            .entry-sub { font-size: 7.5pt; margin-bottom: 2px; }
+            .entry ul li { font-size: 8pt; padding: 1px 0 1px 12px; }
+            .entry ul li::before { font-size: 7pt; top: 2px; }
 
             .lang-item { font-size: 8.5pt; }
-            .lang-item strong { color: #1a3a7a !important; }
-            .lang-item span { font-size: 8pt; color: #555 !important; }
+            .lang-item span { font-size: 8pt; }
         }
     </style>
 </head>
