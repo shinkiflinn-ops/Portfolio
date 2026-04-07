@@ -23,10 +23,10 @@
             font-family: 'Inter', sans-serif;
             background: var(--dark);
             color: var(--text);
-            line-height: 1.5;
+            line-height: 1.4; /* Plus compact */
         }
 
-        /* Bouton impression (visible à l'écran uniquement) */
+        /* Boutique impression (visible à l'écran uniquement) */
         .print-bar {
             background: #1a1d27;
             border-bottom: 1px solid #2d3250;
@@ -46,64 +46,66 @@
             cursor: pointer;
         }
         .print-bar button:hover { background: #1d4ed8; }
-        .print-bar p {
-            font-size: 0.8rem;
-            color: var(--muted);
-        }
+        .print-bar p { font-size: 0.8rem; color: var(--muted); }
         .print-bar strong { color: #facc15; }
 
         .cv-page {
             max-width: 820px;
-            margin: 30px auto;
+            margin: 20px auto;
             padding: 0 20px 40px;
         }
 
         /* ── Header ──────────────────────────────────────────── */
         .cv-header {
             border-bottom: 2px solid var(--accent);
-            padding-bottom: 14px;
-            margin-bottom: 16px;
+            padding-bottom: 10px;
+            margin-bottom: 12px;
         }
         .cv-header h1 {
-            font-size: 1.75rem;
+            font-size: 1.6rem;
             font-weight: 700;
             color: var(--accent);
         }
         .cv-header .role {
-            font-size: 0.85rem;
+            font-size: 0.8rem;
             color: var(--muted);
             font-weight: 600;
             text-transform: uppercase;
-            letter-spacing: 0.06em;
-            margin: 4px 0 10px;
+            letter-spacing: 0.05em;
+            margin: 2px 0 8px;
         }
         .contact-row {
             display: flex;
             flex-wrap: wrap;
-            gap: 10px 20px;
-            font-size: 0.82rem;
+            gap: 8px 16px;
+            font-size: 0.8rem;
             color: var(--muted);
         }
         .contact-row a { color: var(--accent); text-decoration: none; }
 
         /* ── Section ──────────────────────────────────────────── */
-        .cv-section { margin-bottom: 14px; }
+        .cv-section { margin-bottom: 12px; }
         .cv-section h2 {
-            font-size: 0.72rem;
+            font-size: 0.7rem;
             font-weight: 700;
             text-transform: uppercase;
-            letter-spacing: 0.12em;
+            letter-spacing: 0.1em;
             color: var(--accent);
             border-bottom: 1px solid var(--border);
-            padding-bottom: 5px;
-            margin-bottom: 10px;
+            padding-bottom: 4px;
+            margin-bottom: 8px;
         }
+
+        /* ── Profil ───────────────────────────────────────────── */
+        .profil-text { font-size: 0.82rem; line-height: 1.5; color: #c5c9d9; }
+        .profil-obj { margin-top: 6px; }
+        .profil-accent { color: var(--accent); }
 
         /* ── Compétences ──────────────────────────────────────── */
         .skills-list { list-style: none; }
         .skills-list li {
-            font-size: 0.83rem;
-            padding: 3px 0;
+            font-size: 0.82rem;
+            padding: 2px 0;
             border-bottom: 1px solid var(--border);
             color: var(--text);
         }
@@ -111,7 +113,7 @@
         .skills-list strong { color: var(--accent); }
 
         /* ── Entrée projet/formation ──────────────────────────── */
-        .entry { margin-bottom: 10px; }
+        .entry { margin-bottom: 8px; }
         .entry:last-child { margin-bottom: 0; }
 
         .entry-header {
@@ -121,15 +123,15 @@
             flex-wrap: wrap;
             gap: 2px;
         }
-        .entry-header h3 { font-size: 0.9rem; font-weight: 600; }
-        .entry-date { font-size: 0.78rem; color: var(--muted); white-space: nowrap; }
-        .entry-sub { font-size: 0.78rem; color: var(--muted); margin-bottom: 4px; }
+        .entry-header h3 { font-size: 0.85rem; font-weight: 600; }
+        .entry-date { font-size: 0.75rem; color: var(--muted); white-space: nowrap; }
+        .entry-sub { font-size: 0.75rem; color: var(--muted); margin-bottom: 2px; }
 
         .entry ul { list-style: none; padding: 0; }
         .entry ul li {
-            font-size: 0.82rem;
+            font-size: 0.8rem;
             color: #c5c9d9;
-            padding: 2px 0 2px 14px;
+            padding: 1.5px 0 1.5px 12px;
             position: relative;
         }
         .entry ul li::before {
@@ -137,14 +139,9 @@
             position: absolute;
             left: 0;
             color: var(--accent);
-            font-size: 0.7rem;
-            top: 3px;
+            font-size: 0.65rem;
+            top: 2px;
         }
-
-        /* ── Profil ───────────────────────────────────────────── */
-        .profil-text { font-size: 0.85rem; line-height: 1.6; color: #c5c9d9; }
-        .profil-obj { margin-top: 8px; }
-        .profil-accent { color: var(--accent); }
 
         /* ── Langues ──────────────────────────────────────────── */
         .lang-grid {
@@ -152,15 +149,15 @@
             grid-template-columns: 1fr 1fr;
             gap: 8px;
         }
-        .lang-item { font-size: 0.83rem; }
+        .lang-item { font-size: 0.82rem; }
         .lang-item strong { color: var(--accent); display: block; }
-        .lang-item span { color: var(--muted); font-size: 0.78rem; }
+        .lang-item span { color: var(--muted); font-size: 0.75rem; }
 
         /* ── IMPRESSION ───────────────────────────────────────── */
         @media print {
             @page {
                 size: A4 portrait;
-                margin: 12mm 14mm 10mm 14mm;
+                margin: 10mm 12mm;
             }
 
             html { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
@@ -169,8 +166,8 @@
 
             body {
                 background: white !important;
-                font-size: 9.5pt;
-                line-height: 1.4;
+                font-size: 9.2pt;
+                line-height: 1.35;
             }
 
             /* ── Reset universel : tout le cv devient noir sur blanc ── */
@@ -196,30 +193,29 @@
             .entry-sub,
             .lang-item span { color: #555 !important; }
 
-            /* ── Tailles ── */
             .cv-page { margin: 0; padding: 0; max-width: 100%; }
 
-            .cv-header { padding-bottom: 8px; margin-bottom: 10px; }
-            .cv-header h1 { font-size: 16pt; }
-            .cv-header .role { font-size: 8pt; margin: 2px 0 7px; }
-            .contact-row { font-size: 8pt; gap: 6px 16px; }
+            .cv-header { padding-bottom: 6px; margin-bottom: 8px; }
+            .cv-header h1 { font-size: 15pt; }
+            .cv-header .role { font-size: 7.5pt; margin: 1px 0 6px; }
+            .contact-row { font-size: 7.5pt; gap: 4px 14px; }
 
             .cv-section { margin-bottom: 8px; }
-            .cv-section h2 { font-size: 7pt; padding-bottom: 3px; margin-bottom: 6px; }
+            .cv-section h2 { font-size: 6.5pt; padding-bottom: 2px; margin-bottom: 5px; }
 
-            .profil-text { font-size: 8.5pt; }
+            .profil-text { font-size: 8.2pt; }
 
-            .skills-list li { font-size: 8.5pt; padding: 1.5px 0; }
+            .skills-list li { font-size: 8.2pt; padding: 1.2px 0; }
 
-            .entry { margin-bottom: 7px; page-break-inside: avoid; }
-            .entry-header h3 { font-size: 8.5pt; }
-            .entry-date { font-size: 7.5pt; }
-            .entry-sub { font-size: 7.5pt; margin-bottom: 2px; }
-            .entry ul li { font-size: 8pt; padding: 1px 0 1px 12px; }
-            .entry ul li::before { font-size: 7pt; top: 2px; }
+            .entry { margin-bottom: 6px; page-break-inside: avoid; }
+            .entry-header h3 { font-size: 8.2pt; }
+            .entry-date { font-size: 7pt; }
+            .entry-sub { font-size: 7pt; margin-bottom: 1px; }
+            .entry ul li { font-size: 7.8pt; padding: 0.8px 0 0.8px 10px; }
+            .entry ul li::before { font-size: 6pt; top: 2px; }
 
-            .lang-item { font-size: 8.5pt; }
-            .lang-item span { font-size: 8pt; }
+            .lang-item { font-size: 8.2pt; }
+            .lang-item span { font-size: 7.8pt; }
         }
     </style>
 </head>
@@ -227,8 +223,13 @@
 
 <!-- Barre impression (cachée à l'impression) -->
 <div class="print-bar">
-    <button onclick="window.print()">🖨️ Imprimer / Sauvegarder en PDF</button>
-    <p>Dans la fenêtre d'impression du navigateur, <strong>décochez "En-têtes et pieds de page"</strong> pour supprimer la date et l'URL.</p>
+    <button onclick="window.print()" 
+            data-fr="🖨️ Imprimer / Sauvegarder en PDF" 
+            data-en="🖨️ Print / Save as PDF">🖨️ Imprimer / Sauvegarder en PDF</button>
+    <p data-fr='Dans la fenêtre d&apos;impression du navigateur, <strong>décochez "En-têtes et pieds de page"</strong> pour supprimer la date et l&apos;URL.'
+       data-en='In the browser print window, <strong>uncheck "Headers and footers"</strong> to remove the date and URL.'>
+       Dans la fenêtre d'impression du navigateur, <strong>décochez "En-têtes et pieds de page"</strong> pour supprimer la date et l'URL.
+    </p>
 </div>
 
 <div class="cv-page">
@@ -236,110 +237,148 @@
     <!-- En-tête -->
     <div class="cv-header">
         <h1>John AYIVI</h1>
-        <p class="role">Candidature — Master / Stage · Programmation de Jeux Vidéo &amp; Systèmes Embarqués</p>
+        <p class="role" 
+           data-fr="Candidature — Master / Stage · Programmation de Jeux Vidéo &amp; Systèmes Embarqués"
+           data-en="Application — Master's / Internship · Game Programming &amp; Embedded Systems">
+           Candidature — Master / Stage · Programmation de Jeux Vidéo &amp; Systèmes Embarqués</p>
         <div class="contact-row">
             <span>📍 Abomey-Calavi, Bénin</span>
             <span>📞 +229 01 44 75 48 30</span>
             <a href="mailto:kemerdyjohn@gmail.com">kemerdyjohn@gmail.com</a>
-            <a href="https://shinkiflinn-ops.github.io/Portfolio/" target="_blank">Portfolio GitHub Pages</a>
+            <a href="https://shinkiflinn-ops.github.io/Portfolio/" target="_blank"
+               data-fr="Portfolio GitHub Pages" data-en="Portfolio GitHub Pages">Portfolio GitHub Pages</a>
             <a href="https://www.linkedin.com/in/john-dev88" target="_blank">LinkedIn</a>
         </div>
     </div>
 
     <!-- Profil -->
     <div class="cv-section">
-        <h2>Profil</h2>
-        <p class="profil-text">
-            Étudiant en Génie Électrique avec une spécialisation progressive vers le développement de jeux vidéo et les systèmes interactifs. Je développe des projets combinant programmation, logique et création visuelle, avec une attention particulière à l'optimisation, à la conception de systèmes et à l'expérience utilisateur.
+        <h2 data-fr="Profil" data-en="Profile">Profil</h2>
+        <p class="profil-text"
+           data-fr="Étudiant en Génie Électrique avec une spécialisation progressive vers le développement de jeux vidéo et les systèmes interactifs. Je développe des projets combinant programmation, logique et création visuelle, avec une attention particulière à l'optimisation, à la conception de systèmes et à l'expérience utilisateur."
+           data-en="Electrical Engineering student with a progressive specialization toward game development and interactive systems. I build projects combining programming, logic, and visual creation, with a focus on optimization, systems design, and user experience.">
+           Étudiant en Génie Électrique avec une spécialisation progressive vers le développement de jeux vidéo et les systèmes interactifs. Je développe des projets combinant programmation, logique et création visuelle, avec une attention particulière à l'optimisation, à la conception de systèmes et à l'expérience utilisateur.
         </p>
-        <p class="profil-text profil-obj">
-            🎯 <strong class="profil-accent">Objectif :</strong> Intégrer un master spécialisé en jeu vidéo afin de renforcer mes compétences en game development, game design et production interactive, et contribuer à des projets ambitieux.
+        <p class="profil-text profil-obj"
+           data-fr="🎯 <strong class='profil-accent'>Objectif :</strong> Intégrer un master spécialisé en jeu vidéo afin de renforcer mes compétences en game development, game design et production interactive, et contribuer à des projets ambitieux."
+           data-en="🎯 <strong class='profil-accent'>Objective:</strong> Join a specialized Master's program in game development to strengthen my skills in game development, game design, and interactive production, and contribute to ambitious projects.">
+           🎯 <strong class="profil-accent">Objectif :</strong> Intégrer un master spécialisé en jeu vidéo afin de renforcer mes compétences en game development, game design et production interactive, et contribuer à des projets ambitieux.
         </p>
     </div>
 
     <!-- Compétences -->
     <div class="cv-section">
-        <h2>Compétences Techniques</h2>
+        <h2 data-fr="Compétences Techniques" data-en="Technical Skills">Compétences Techniques</h2>
         <ul class="skills-list">
-            <li><strong>Développement &amp; Algorithmique :</strong> Programmation orientée objet (C++), GDScript, conception d'algorithmes et optimisation.</li>
-            <li><strong>Moteurs de Jeu &amp; Outils :</strong> Godot Engine 4, Blender (modélisation &amp; texturation 3D), Git, GitHub Pages.</li>
-            <li><strong>Électronique &amp; Conception Matérielle :</strong> Circuits sur breadboard, logique séquentielle (NE555, 74LS90), test &amp; débogage.</li>
-            <li><strong>Environnement &amp; OS :</strong> Linux (Pop!_OS), HTML/CSS, déploiement web.</li>
-            <li><strong>Soft Skills :</strong> Esprit d'analyse, apprentissage autonome, travail en équipe, résolution de problèmes complexes.</li>
+            <li data-fr="<strong>Développement &amp; Algorithmique :</strong> Programmation orientée objet (C++), GDScript, conception d'algorithmes et optimisation."
+                data-en="<strong>Development &amp; Algorithms:</strong> Object-Oriented Programming (C++), GDScript, algorithm design and optimization.">
+                <strong>Développement &amp; Algorithmique :</strong> Programmation orientée objet (C++), GDScript, conception d'algorithmes et optimisation.</li>
+            <li data-fr="<strong>Moteurs de Jeu &amp; Outils :</strong> Godot Engine 4, Blender (modélisation &amp; texturation 3D), Git, GitHub Pages."
+                data-en="<strong>Game Engines &amp; Tools:</strong> Godot Engine 4, Blender (3D modeling &amp; texturing), Git, GitHub Pages.">
+                <strong>Moteurs de Jeu &amp; Outils :</strong> Godot Engine 4, Blender (modélisation &amp; texturation 3D), Git, GitHub Pages.</li>
+            <li data-fr="<strong>Électronique &amp; Conception Matérielle :</strong> Circuits sur breadboard, logique séquentielle (NE555, 74LS90), test &amp; débogage."
+                data-en="<strong>Electronics &amp; Hardware Design:</strong> Breadboard circuits, sequential logic (NE555, 74LS90), testing &amp; debugging.">
+                <strong>Électronique &amp; Conception Matérielle :</strong> Circuits sur breadboard, logique séquentielle (NE555, 74LS90), test &amp; débogage.</li>
+            <li data-fr="<strong>Environnement &amp; OS :</strong> Linux (Pop!_OS), HTML/CSS, déploiement web."
+                data-en="<strong>Environment &amp; OS:</strong> Linux (Pop!_OS), HTML/CSS, web deployment.">
+                <strong>Environnement &amp; OS :</strong> Linux (Pop!_OS), HTML/CSS, déploiement web.</li>
+            <li data-fr="<strong>Soft Skills :</strong> Esprit d'analyse, apprentissage autonome, travail en équipe, résolution de problèmes complexes."
+                data-en="<strong>Soft Skills:</strong> Analytical thinking, autonomous learning, teamwork, complex problem-solving.">
+                <strong>Soft Skills :</strong> Esprit d'analyse, apprentissage autonome, travail en équipe, résolution de problèmes complexes.</li>
         </ul>
     </div>
 
     <!-- Projets -->
     <div class="cv-section">
-        <h2>Projets Académiques &amp; Personnels</h2>
+        <h2 data-fr="Projets Académiques &amp; Personnels" data-en="Academic &amp; Personal Projects">Projets Académiques &amp; Personnels</h2>
 
         <div class="entry">
             <div class="entry-header">
-                <h3>Modélisation &amp; Texturation 3D pour Jeux Vidéo — Blender</h3>
+                <h3 data-fr="Modélisation &amp; Texturation 3D pour Jeux Vidéo — Blender"
+                    data-en="3D Modeling &amp; Texturing for Game Assets — Blender">Modélisation &amp; Texturation 3D pour Jeux Vidéo — Blender</h3>
                 <span class="entry-date">Fév. – Mars 2026</span>
             </div>
             <ul>
-                <li>Modélisé des assets et personnages 3D en respectant les contraintes techniques du rendu temps réel.</li>
-                <li>Optimisé la topologie des maillages (retopologie) pour une intégration fluide dans Godot Engine.</li>
-                <li>Conçu des dépliages UV et des textures pour améliorer la fidélité visuelle des modèles.</li>
-                <li>Créé un set de 5 modèles d'environnement modulaires pour un prototype de RPG.</li>
+                <li data-fr="Modélisé des assets et personnages 3D en respectant les contraintes techniques du rendu temps réel."
+                    data-en="Modeled 3D assets and characters while adhering to real-time rendering technical constraints.">Modélisé des assets et personnages 3D en respectant les contraintes techniques du rendu temps réel.</li>
+                <li data-fr="Optimisé la topologie des maillages (retopologie) pour une intégration fluide dans Godot Engine."
+                    data-en="Optimized mesh topology (retopology) for smooth integration into Godot Engine.">Optimisé la topologie des maillages (retopologie) pour une intégration fluide dans Godot Engine.</li>
+                <li data-fr="Conçu des dépliages UV et des textures pour améliorer la fidélité visuelle des modèles."
+                    data-en="Produced UV unwrapping and detailed textures to enhance the visual fidelity of 3D models.">Conçu des dépliages UV et des textures pour améliorer la fidélité visuelle des modèles.</li>
+                <li data-fr="Créé un set de 5 modèles d'environnement modulaires pour un prototype de RPG."
+                    data-en="Created a set of 5 modular environment models for an RPG prototype.">Créé un set de 5 modèles d'environnement modulaires pour un prototype de RPG.</li>
             </ul>
         </div>
 
         <div class="entry">
             <div class="entry-header">
-                <h3>Jeu de Plateformes 2D — Godot Engine 4</h3>
+                <h3 data-fr="Jeu de Plateformes 2D — Godot Engine 4"
+                    data-en="2D Platformer Game — Godot Engine 4">Jeu de Plateformes 2D — Godot Engine 4</h3>
                 <span class="entry-date">Janv. – Mars 2025</span>
             </div>
             <ul>
-                <li>Programmé les mécaniques de mouvement et la gestion des collisions en GDScript.</li>
-                <li>Implémenté une machine à états (FSM) pour les animations et comportements du joueur.</li>
-                <li>Optimisé la mémoire via le pooling d'objets pour les projectiles.</li>
+                <li data-fr="Programmé les mécaniques de mouvement et la gestion des collisions en GDScript."
+                    data-en="Programmed movement mechanics and collision handling in GDScript.">Programmé les mécaniques de mouvement et la gestion des collisions en GDScript.</li>
+                <li data-fr="Implémenté une machine à états (FSM) pour les animations et comportements du joueur."
+                    data-en="Implemented a Finite State Machine (FSM) for player animations and behavior.">Implémenté une machine à états (FSM) pour les animations et comportements du joueur.</li>
+                <li data-fr="Optimisé la mémoire via le pooling d'objets pour les projectiles."
+                    data-en="Optimized memory management using object pooling for projectiles.">Optimisé la mémoire via le pooling d'objets pour les projectiles.</li>
             </ul>
         </div>
 
         <div class="entry">
             <div class="entry-header">
-                <h3>Conception &amp; Test de Circuits Électroniques Matériels</h3>
+                <h3 data-fr="Conception &amp; Test de Circuits Électroniques Matériels"
+                    data-en="Hardware Electronic Circuit Design &amp; Testing">Conception &amp; Test de Circuits Électroniques Matériels</h3>
                 <span class="entry-date">Sept. – Déc. 2025</span>
             </div>
             <ul>
-                <li>Assemblé et testé des circuits fonctionnels sur breadboard (NE555, compteurs 74LS90).</li>
-                <li>Réalisé un système de gestion de l'éclairage et de conditionnement d'air.</li>
-                <li>Validé le matériel pour identifier et corriger les défaillances électriques.</li>
+                <li data-fr="Assemblé et testé des circuits fonctionnels sur breadboard (NE555, compteurs 74LS90)."
+                    data-en="Assembled and tested functional circuits on breadboard (NE555 timers, 74LS90 counters).">Assemblé et testé des circuits fonctionnels sur breadboard (NE555, compteurs 74LS90).</li>
+                <li data-fr="Réalisé un système de gestion de l'éclairage et de conditionnement d'air."
+                    data-en="Built a lighting and air conditioning management automation system.">Réalisé un système de gestion de l'éclairage et de conditionnement d'air.</li>
+                <li data-fr="Validé le matériel pour identifier et corriger les défaillances électriques."
+                    data-en="Validated hardware to identify and correct electrical faults.">Validé le matériel pour identifier et corriger les défaillances électriques.</li>
             </ul>
         </div>
 
         <div class="entry">
             <div class="entry-header">
-                <h3>Portfolio Web — GitHub Pages</h3>
+                <h3 data-fr="Portfolio Web — GitHub Pages" data-en="Web Portfolio — GitHub Pages">Portfolio Web — GitHub Pages</h3>
                 <span class="entry-date">Mars – Avr. 2026</span>
             </div>
             <ul>
-                <li>Développé une plateforme web complète exposant mes projets en développement et électronique.</li>
-                <li>Déployé via GitHub Pages et géré les versions avec Git.</li>
+                <li data-fr="Développé une plateforme web complète exposant mes projets en développement et électronique."
+                    data-en="Built a complete web platform showcasing my development and electronics projects.">Développé une plateforme web complète exposant mes projets en développement et électronique.</li>
+                <li data-fr="Déployé via GitHub Pages et géré les versions avec Git."
+                    data-en="Deployed via GitHub Pages and managed source code versions with Git.">Déployé via GitHub Pages et géré les versions avec Git.</li>
             </ul>
         </div>
     </div>
 
     <!-- Formation -->
     <div class="cv-section">
-        <h2>Formation</h2>
+        <h2 data-fr="Formation" data-en="Education">Formation</h2>
 
         <div class="entry">
             <div class="entry-header">
-                <h3>Licence 2 — Génie Électrique et Informatique</h3>
-                <span class="entry-date">Sept. 2024 – Présent</span>
+                <h3 data-fr="Licence 2 — Génie Électrique et Informatique"
+                    data-en="Bachelor's Degree (L2) — Electrical and Computer Engineering">Licence 2 — Génie Électrique et Informatique</h3>
+                <span class="entry-date" 
+                    data-fr="Sept. 2024 – Présent" data-en="Sept. 2024 – Present">Sept. 2024 – Présent</span>
             </div>
             <p class="entry-sub">Institut National Supérieur de Technologie Industrielle (INSTI) — Lokossa, Bénin</p>
             <ul>
-                <li>Algorithmique, systèmes embarqués, Programmation Orientée Objet (C++), électronique, automatisme, analyse numérique.</li>
+                <li data-fr="Algorithmique, systèmes embarqués, Programmation Orientée Objet (C++), électronique, automatisme, analyse numérique."
+                    data-en="Algorithms, embedded systems, Object-Oriented Programming (C++), electronics, industrial IT, automation, numerical analysis.">
+                    Algorithmique, systèmes embarqués, Programmation Orientée Objet (C++), électronique, automatisme, analyse numérique.</li>
             </ul>
         </div>
 
         <div class="entry">
             <div class="entry-header">
-                <h3>Baccalauréat — Spécialité Électrotechnique</h3>
+                <h3 data-fr="Baccalauréat — Spécialité Électrotechnique"
+                    data-en="High School Diploma — Electrical Engineering Track">Baccalauréat — Spécialité Électrotechnique</h3>
                 <span class="entry-date">2024</span>
             </div>
             <p class="entry-sub">Lycée Technique d'Amitié Sino-Béninoise d'Akassato — Abomey-Calavi, Bénin</p>
@@ -348,19 +387,40 @@
 
     <!-- Langues -->
     <div class="cv-section">
-        <h2>Langues</h2>
+        <h2 data-fr="Langues" data-en="Languages">Langues</h2>
         <div class="lang-grid">
             <div class="lang-item">
-                <strong>Français</strong>
-                <span>Courant — Langue maternelle</span>
+                <strong data-fr="Français" data-en="French">Français</strong>
+                <span data-fr="Courant — Langue maternelle" data-en="Fluent — Native language">Courant — Langue maternelle</span>
             </div>
             <div class="lang-item">
-                <strong>Anglais</strong>
-                <span>Niveau technique — Lecture de documentation et collaboration internationale</span>
+                <strong data-fr="Anglais" data-en="English">Anglais</strong>
+                <span data-fr="Niveau technique — Lecture de documentation et collaboration internationale"
+                      data-en="Technical level — Technical documentation reading and international collaboration">Niveau technique — Lecture de documentation et collaboration internationale</span>
             </div>
         </div>
     </div>
 
 </div>
+
+<script>
+    (function() {
+        const lang = localStorage.getItem('portfolioLang') || 'fr';
+        const update = () => {
+            document.querySelectorAll('[data-en]').forEach(el => {
+                const text = el.getAttribute('data-' + lang);
+                if (!text) return;
+                if (el.children.length > 0 || text.includes('<')) {
+                    el.innerHTML = text;
+                } else {
+                    el.textContent = text;
+                }
+            });
+            const btn = document.querySelector('.print-bar button');
+            if (btn) btn.textContent = lang === 'en' ? '🖨️ Print / Save as PDF' : '🖨️ Imprimer / Sauvegarder en PDF';
+        };
+        update();
+    })();
+</script>
 </body>
 </html>

@@ -15,13 +15,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Language switching logic
     const langToggle = document.getElementById('lang-toggle');
-    let currentLang = 'fr'; // Default is FR
+    let currentLang = localStorage.getItem('portfolioLang') || 'fr'; // Restore from storage
 
     const updateLanguage = () => {
         document.querySelectorAll('[data-en]').forEach(el => {
             const text = el.getAttribute(`data-${currentLang}`);
             
-            // Si l'élément a des enfants, on utilise innerHTML (pour conserver <strong>, <i/&gt;)
+            // Si l'élément a des enfants, on utilise innerHTML (pour conserver <strong>, <i/>)
             if (el.children.length > 0 || text.includes('<')) {
                 el.innerHTML = text;
             } else {
@@ -33,7 +33,13 @@ document.addEventListener('DOMContentLoaded', () => {
         if(langToggle) {
             langToggle.textContent = currentLang === 'fr' ? 'EN / FR' : 'FR / EN';
         }
+
+        // Persist language choice
+        localStorage.setItem('portfolioLang', currentLang);
     };
+
+    // Apply saved language on load
+    updateLanguage();
 
     if(langToggle) {
         langToggle.addEventListener('click', () => {
