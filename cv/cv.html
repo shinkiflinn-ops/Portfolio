@@ -171,12 +171,52 @@
 
         /* ─── Print ───────────────────────────────────────── */
         @media print {
-            body { background: white; color: black; }
-            .cv-wrapper { margin: 0; }
-            .cv-header, .cv-section { border-color: #ccc; background: white; }
-            .cv-header h1, .cv-section h2, .entry-header h3,
-            .skills-list strong, .lang-item strong { color: #1a56db; }
-            .contact-row a { color: #1a56db; }
+            @page {
+                size: A4;
+                margin: 18mm 16mm;
+            }
+
+            body {
+                background: white !important;
+                color: #111 !important;
+                font-size: 11pt;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+
+            .cv-wrapper {
+                max-width: 100%;
+                margin: 0;
+                padding: 0;
+            }
+
+            .cv-header,
+            .cv-section {
+                background: white !important;
+                border: 1px solid #ccc !important;
+                border-radius: 0 !important;
+                padding: 12pt 14pt !important;
+                margin-bottom: 8pt !important;
+                page-break-inside: avoid;
+            }
+
+            .cv-header h1 { color: #1a3a7a !important; font-size: 18pt; }
+            .cv-header .role { color: #444 !important; }
+            .cv-section h2 { color: #1a3a7a !important; border-color: #ccc !important; }
+            .entry-header h3 { color: #111 !important; }
+            .skills-list strong,
+            .lang-item strong { color: #1a3a7a !important; }
+
+            .contact-row { color: #333 !important; }
+            .contact-row a { color: #1a3a7a !important; }
+
+            .entry ul li { color: #222 !important; }
+            .entry ul li::before { color: #1a3a7a !important; }
+            .entry-date { color: #555 !important; }
+            .entry-sub { color: #555 !important; }
+            .skills-list li { color: #111 !important; border-color: #ddd !important; }
+
+            .entry { page-break-inside: avoid; }
         }
 
         @media (max-width: 600px) {
