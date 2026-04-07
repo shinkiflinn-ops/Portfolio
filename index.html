@@ -5,132 +5,218 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description"
-        content="Portfolio de John - Développeur spécialisée Game Dev (Full Stack) et Électronicien en formation. Découvrez mes projets en C++, C#, Godot et électronique.">
-    <meta name="keywords" content="développeur, game designer, électronique, C++, C#, Godot, portfolio">
-    <meta name="author" content="John-Mary Kemerdy Fabrice AYVI">
-    <title>John | Portfolio</title>
+        content="Portfolio de John AYIVI - Game Programmer, Tech Artist et Étudiant en Ingénierie. Spécialisé en conception système Godot, C++, C#.">
+    <meta name="keywords"
+        content="développeur, programmer, game engine, godot, C++, C#, GDScript, tech artist, électronique, portfolio">
+    <meta name="author" content="John AYIVI">
+    <title>John AYIVI | Game Programmer & Tech Artist</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=JetBrains+Mono:wght@400;700&display=swap"
+        rel="stylesheet">
 </head>
 
 <body>
 
     <nav class="navbar">
         <div class="nav-container">
-            <a href="#about" class="nav-link" data-en="About" data-fr="À propos">À propos</a>
-            <a href="#experience" class="nav-link" data-en="Experience" data-fr="Expérience">Expérience</a>
-            <a href="#skills" class="nav-link" data-en="Skills" data-fr="Compétences">Compétences</a>
             <a href="#projects" class="nav-link" data-en="Projects" data-fr="Projets">Projets</a>
-            <a href="#contact" class="nav-link" data-en="Contact" data-fr="Contact">Contact</a>
+            <a href="#technical-breakdown" class="nav-link" data-en="Engineering" data-fr="Ingénierie">Ingénierie</a>
+            <a href="#skills" class="nav-link" data-en="Skills" data-fr="Compétences">Compétences</a>
+            <a href="#about" class="nav-link" data-en="Vision" data-fr="Vision">Vision</a>
+            <a href="#experience" class="nav-link" data-en="Experience" data-fr="Expérience">Expérience</a>
+            <a href="cv.html" class="nav-link" data-en="CV" data-fr="Mon CV" target="_blank">Mon CV</a>
             <button id="theme-toggle" class="theme-btn"><i class="fas fa-moon"></i></button>
+            <button id="lang-toggle" class="ui-btn lang-btn nav-lang-btn">EN / FR</button>
         </div>
     </nav>
 
     <header>
         <div class="header-container">
             <div class="hero-banner">
-                <img src="perso principal male.jpg" alt="John Character" class="hero-char">
-                <div class="banner-glitch"></div>
+                <img src="image de profil.png" alt="John AYIVI Profile" class="hero-char">
             </div>
-            <div class="header-left">
-                <h1 data-en="Hi, I'm <span>John | Game Dev & Tech Artist</span>" data-fr="Salut, je suis <span>John | Game Dev & Tech Artist</span>">Salut, je suis <span>John | Game Dev & Tech Artist</span></h1>
-                <p class="subtitle" data-en="Game Developer & Technical Artist | Engineering Student" data-fr="Game Developer & Technical Artist | Engineering Student">Game Developer & Technical Artist | Engineering Student</p>
+            <div class="header-content">
+                <h1 data-en="John AYIVI" data-fr="John AYIVI">John AYIVI</h1>
+                <h2 class="role-title" data-en="Game Programmer & Tech Artist Engine"
+                    data-fr="Game Programmer & Tech Artist Engine">Game Programmer & Tech Artist Engine</h2>
+                <p class="subtitle"
+                    data-en="Electrical and Computer Engineering student exploring the intersection of low-level architecture and interactive creation. My work in (Godot, C++, C#, GDScript) is driven by performance, conceptual modularity, and gameplay fluidity."
+                    data-fr="Étudiant en Génie Électrique et Informatique, j'explore l'intersection entre l'architecture bas niveau et la création interactive. Mes développements sur Godot (C++, C#, GDScript) sont orientés performance, modularité conceptuelle et fluidité de gameplay.">
+                    Étudiant en Génie Électrique et Informatique, j'explore l'intersection entre l'architecture bas
+                    niveau et la création interactive. Mes développements sur (Godot ,C++, C#, GDScript) sont orientés
+                    performance, modularité conceptuelle et fluidité de gameplay.
+                </p>
+
                 <div class="header-actions">
-                    <button id="lang-toggle" class="ui-btn lang-btn">EN / FR</button>
-                </div>
-
-                <div class="rpg-ui-container">
-                    <div class="ui-panel">
-                        <h3 class="ui-title">
-                            <span data-en="SYSTEM STATUS v2.2" data-fr="STATUT SYSTÈME v2.2">STATUT SYSTÈME v2.2</span>
-                            <button class="play-btn" id="play-trigger" data-en="PLAY" data-fr="JOUER">JOUER</button>
-                        </h3>
-                        <div class="ui-stats">
-                            <p data-en="IDENTITY: John" data-fr="IDENTITÉ : John">IDENTITÉ : John</p>
-                            <p data-en="CLASS: Creative_Tech_Architect" data-fr="CLASSE : Creative_Tech_Architect">CLASSE : Creative_Tech_Architect</p>
-                            <p data-en="LEVEL: 23 [█████-----] 40% (Building)" data-fr="NIVEAU : 23 [█████-----] 40% (En construction)">NIVEAU : 23 [█████-----] 40% (En construction)</p>
-                            <p data-en="POWER: NE555_CLOCK (1Hz)" data-fr="PUISSANCE : HORLOGE_NE555 (1Hz)">PUISSANCE : HORLOGE_NE555 (1Hz)</p>
-                        </div>
-                        <div class="ui-terminal" id="ui-terminal">
-                            <span class="terminal-prompt">root@portfolio:~/$</span> systemctl status creative_core
-                            <span class="terminal-prompt">... [OK]</span> Core initialized.
-                            <span class="terminal-prompt">root@portfolio:~/$</span> _
-                        </div>
-                        <div class="ui-controls">
-                            <button class="ui-btn" data-cmd="analyze_circuit.sys" data-en="ANALYZE CIRCUIT" data-fr="ANALYSER CIRCUIT">ANALYSER CIRCUIT</button>
-                            <button class="ui-btn" data-cmd="compile_code.run" data-en="COMPILE CODE" data-fr="COMPILER CODE">COMPILER CODE</button>
-                            <button class="ui-btn" data-cmd="build_project.exe" data-en="BUILD PROJECT" data-fr="BÂTIR PROJET">BÂTIR PROJET</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="header-right">
-                <img src="image de profil.png" alt="John - Photo de Profil" class="profile-pic">
-                <div class="social-links">
-                    <a href="https://github.com/john" target="_blank" class="social-icon"><i
-                            class="fab fa-github"></i></a>
-                    <a href="https://linkedin.com/in/john" target="_blank" class="social-icon"><i
-                            class="fab fa-linkedin"></i></a>
-                    <a href="https://youtube.com/@john" target="_blank" class="social-icon"><i
-                            class="fab fa-youtube"></i></a>
+                    <a href="#projects" class="ui-btn primary-btn" data-en="Discover My Approach"
+                        data-fr="Découvrir mon approche logicielle">Découvrir mon approche logicielle</a>
+                    <a href="cv.html" class="ui-btn cv-btn" data-en="DOWNLOAD CV" data-fr="TÉLÉCHARGER CV"
+                        target="_blank">TÉLÉCHARGER CV</a>
                 </div>
             </div>
         </div>
     </header>
 
-    <section id="about">
-        <h2 data-en="Vision & Mission" data-fr="Vision & Mission">Vision & Mission</h2>
-        <div class="about-card intent-note">
-            <blockquote class="vision-quote">
-                <p data-en="&ldquo;My goal isn't just to make games; it's to build the foundation of an industry in Benin.&rdquo;" 
-                   data-fr="&ldquo;Mon objectif n'est pas seulement de créer des jeux, mais de poser les bases d'une industrie au Bénin.&rdquo;">
-                   &ldquo;Mon objectif n'est pas seulement de créer des jeux, mais de poser les bases d'une industrie au Bénin.&rdquo;
-                </p>
-            </blockquote>
-            
-            <div class="intent-grid">
-                <div class="intent-column">
-                    <h3 data-en="From Engineering to Creativity" data-fr="De l'Ingénierie à la Créativité">De l'Ingénierie à la Créativité</h3>
-                    <p data-en="Currently a 2nd-year student in Electrical and Computer Engineering at INSTI (Benin), I operate at the intersection of hardware logic and digital creativity. My background in engineering gives me a unique perspective: I don't just see a character moving; I see the flow of data, CPU optimization, and the mathematical beauty behind every collision."
-                       data-fr="Actuellement en Licence 2 de Génie Électrique et Informatique à l'INSTI (Bénin), j'évolue à l'intersection de la logique matérielle et de la créativité numérique. Mon cursus d'ingénieur m'offre une perspective unique : je ne vois pas seulement un personnage bouger ; je vois le flux de données, l'optimisation CPU et la beauté mathématique derrière chaque collision.">
-                       Actuellement en Licence 2 de Génie Électrique et Informatique à l'INSTI (Bénin), j'évolue à l'intersection de la logique matérielle et de la créativité numérique. Mon cursus d'ingénieur m'offre une perspective unique : je ne vois pas seulement un personnage bouger ; je vois le flux de données, l'optimisation CPU et la beauté mathématique derrière chaque collision.
-                    </p>
-                </div>
-                <div class="intent-column">
-                    <h3 data-en="The Quest for Mastery" data-fr="La Quête de Maîtrise">La Quête de Maîtrise</h3>
-                    <p data-en="I am seeking a Master’s degree abroad in Game Development or Technical Art to master global standards and bring that expertise back home. My vision is to found the first world-class studio in Benin and establish an academy to train the next generation of local creators."
-                       data-fr="Je recherche un Master à l'étranger en Game Development ou Technical Art pour maîtriser les standards mondiaux et ramener cette expertise chez moi. Ma vision est de fonder le premier studio de rang mondial au Bénin et de créer une académie pour former la prochaine génération de créateurs locaux.">
-                       Je recherche un Master à l'étranger en Game Development ou Technical Art pour maîtriser les standards mondiaux et ramener cette expertise chez moi. Ma vision est de fonder le premier studio de rang mondial au Bénin et de créer une académie pour former la prochaine génération de créateurs locaux.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
+    <section id="projects">
+        <h2 class="section-title" data-en="Featured Projects" data-fr="Projets Phares">Projets Phares</h2>
+        <div class="projects-grid">
 
-    <section id="experience">
-        <h2 data-en="Experience & Education" data-fr="Expérience & Éducation">Expérience & Éducation</h2>
-        <div class="experience-grid">
-            <div class="experience-item">
-                <h3 data-en="Independent Developer" data-fr="Développeur Indépendant">Développeur Indépendant</h3>
-                <p><em>2025 - Présent</em></p>
-                <p data-en="Game development with Godot 4, creating 2D games and YouTube content management." data-fr="Développement de jeux vidéo avec Godot 4, création de jeux 2D et gestion de contenu YouTube.">Développement de jeux vidéo avec Godot 4, création de jeux 2D et gestion de contenu YouTube.</p>
+            <div class="project-card case-study">
+                <div class="project-header">
+                    <h3 data-en="Valdoria: Echoes of Betrayal" data-fr="Valdoria: Echoes of Betrayal">Valdoria: Echoes
+                        of Betrayal</h3>
+                    <span class="project-role" data-en="Solo Game Dev, Logic & Integration"
+                        data-fr="Solo Game Dev, Logic & Integration">Solo Game Dev, Logic & Integration</span>
+                </div>
+
+                <!-- Visuels Intégrés -->
+                <div class="project-carousel">
+                    <img src="perso principal male.jpg" alt="Perso Principal Male" loading="lazy">
+                    <img src="perso principal female.png" alt="Perso Principal Female" loading="lazy">
+                    <img src="Viktor.jpg" alt="Viktor" loading="lazy">
+                    <img src="La reine des ombres.jpg" alt="La reine des ombres" loading="lazy">
+                    <img src="barron de fer.jpg" alt="Barron de fer" loading="lazy">
+                    <img src="le pretre.jpg" alt="Le prêtre" loading="lazy">
+                </div>
+
+                <div class="project-stack">
+                    <span class="tech-badge">Godot 4</span>
+                    <span class="tech-badge">GDScript</span>
+                    <span class="tech-badge">3D Architecture</span>
+                </div>
+
+                <p class="project-pitch"
+                    data-en="Ambitious 3D Action-RPG with a combat system focused on tactical engagement (parries, strict timings, Souls-like approach)."
+                    data-fr="Action-RPG en 3D ambitieux avec un système de combat axé sur l'engagement tactique (parades, timings stricts, type Souls-like).">
+                    Action-RPG en 3D ambitieux avec un système de combat axé sur l'engagement tactique (parades, timings
+                    stricts, type Souls-like).</p>
+
+                <div class="project-details-list">
+                    <h4 data-en="Technical Challenges Solved:" data-fr="Défis Techniques Résolus :">Défis Techniques
+                        Résolus :</h4>
+                    <ul>
+                        <li data-en="<strong>State Machine Architecture:</strong> Total separation of concerns between player state controller and animation controller (FSM Pattern)."
+                            data-fr="<strong>Architecture State Machine :</strong> Séparation totale des responsabilités entre contrôleur d'état du joueur et contrôleur d'animations (Pattern FSM).">
+                            <strong>Architecture State Machine :</strong> Séparation totale des responsabilités entre
+                            contrôleur d'état du joueur et contrôleur d'animations (Pattern FSM).
+                        </li>
+                        <li data-en="<strong>Combat & Data:</strong> Dynamic hitboxes tied to actual animation frames rather than timers for absolute precision. Persistent inventory exported externally via Dictionaries/JSON."
+                            data-fr="<strong>Combat & Data :</strong> Gestion des hitboxes dynamiques liées aux frames réelles de l'animation plutôt qu'au timer pur, offrant plus de précision. Inventaire persistant externalisé en dict/JSON.">
+                            <strong>Combat & Data :</strong> Gestion des hitboxes dynamiques liées aux frames réelles de
+                            l'animation plutôt qu'au timer pur, offrant plus de précision. Inventaire persistant
+                            externalisé en dict/JSON.
+                        </li>
+                        <li data-en="<strong>Modular AI:</strong> Programming asynchronous 'Behavior Nodes' for bosses (Patrol > Distance Analysis > Action Selection)."
+                            data-fr="<strong>IA Modulaire :</strong> Programmation de comportement Node asynchrone pour les boss (Patrouille > Analyse distance > Choix d'action).">
+                            <strong>IA Modulaire :</strong> Programmation de comportement Node asynchrone pour les boss
+                            (Patrouille > Analyse distance > Choix d'action).
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="project-links">
+                    <a href="javascript:void(0)" class="ui-btn itch-btn pending-build" data-en="Play Build"
+                        data-fr="Jouer le Build"><i class="fab fa-itch-io"></i> Jouer le Build</a>
+                </div>
             </div>
-            <div class="experience-item">
-                <h3 data-en="Electrical & Computer Engineering" data-fr="Génie Électrique et Informatique">Génie Électrique et Informatique</h3>
-                <p><em>2024 - 2026</em></p>
-                <p data-en="Studies in electrotechnics and electronics, specializing in embedded systems, circuit design." data-fr="Études en électrotechnique et électronique, spécialisation en systèmes embarqués, création de circuits électroniques.">Études en électrotechnique et électronique, spécialisation en systèmes embarqués, création de
-                    circuits électroniques.</p>
+
+            <div class="project-card case-study">
+                <div class="project-header">
+                    <h3 data-en="First 2D Platformer" data-fr="Premier Platformer 2D">Premier Platformer 2D</h3>
+                    <span class="project-role" data-en="Solo Game Dev & Engine Logic"
+                        data-fr="Solo Game Dev & Engine Logic">Solo Game Dev & Engine Logic</span>
+                </div>
+
+                <img src="premier_platformer.png" alt="Capture d'écran du Platformer 2D" class="project-hero-img">
+
+                <div class="project-stack">
+                    <span class="tech-badge">Godot 4</span>
+                    <span class="tech-badge">GDScript</span>
+                    <span class="tech-badge">Vector Math</span>
+                </div>
+
+                <p class="project-pitch"
+                    data-en="My first 2D platformer. Focused on movement fluidity and learning core engine logic (collisions, state management)."
+                    data-fr="Mon premier platformer 2D. Focus sur la fluidité des mouvements et l'apprentissage de la logique moteur (collisions, gestion des états).">
+                    Mon premier platformer 2D. Focus sur la fluidité des mouvements et l'apprentissage de la logique
+                    moteur (collisions, gestion des états).</p>
+
+                <div class="project-details-list">
+                    <h4 data-en="Technical Highlights:" data-fr="Points Techniques :">Points Techniques :</h4>
+                    <ul>
+                        <li data-en="<strong>Dynamic Collisions:</strong> Custom 2D collision logic for smooth platforming interactions."
+                            data-fr="<strong>Collisions Dynamiques :</strong> Logique de collision 2D customisée pour des interactions fluides avec la plateforme.">
+                            <strong>Collisions Dynamiques :</strong> Logique de collision 2D customisée pour des
+                            interactions fluides avec la plateforme.
+                        </li>
+                        <li data-en="<strong>Resource Pooling:</strong> Implemented object pulling for projectiles to maintain stable memory."
+                            data-fr="<strong>Resource Pooling :</strong> Implémentation du pooling d'objets pour les projectiles afin de stabiliser la mémoire durant l'action.">
+                            <strong>Resource Pooling :</strong> Implémentation du pooling d'objets pour les projectiles
+                            afin de stabiliser la mémoire durant l'action.
+                        </li>
+                        <li data-en="<strong>Vector Math:</strong> Normalized vectors ensuring constant unit movement speed."
+                            data-fr="<strong>Vecteurs Mathématiques :</strong> Normalisation des vecteurs garantissant une vitesse de déplacement constante peu importe la vélocité directionnelle.">
+                            <strong>Vecteurs Mathématiques :</strong> Normalisation des vecteurs garantissant une
+                            vitesse de déplacement constante peu importe la vélocité directionnelle.
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="project-links">
+                    <a href="javascript:void(0)" class="ui-btn itch-btn pending-build"
+                        data-en="Play Build" data-fr="Jouer le Build"><i class="fab fa-itch-io"></i> Jouer le Build</a>
+                </div>
             </div>
+
+            <!-- Projets annexes -->
+            <div class="project-card">
+                <h3 data-en="C# Advanced Calculator" data-fr="Calculatrice Avancée C#">Calculatrice Avancée C#</h3>
+                <p data-en="Developed a robust console logic application handling operation precedence, error management, and numeric base conversions. Demonstrates clean OOP structure."
+                    data-fr="Développement d'une application console robuste gérant la précédence des opérations, la gestion des erreurs et les conversions de bases numériques. Démontre une structure orientée objet propre.">
+                    Développement d'une application console robuste gérant la précédence des opérations, la gestion des
+                    erreurs et les conversions de bases numériques. Démontre une structure orientée objet propre.</p>
+                <div class="project-stack small">
+                    <span class="tech-badge">C#</span>
+                    <span class="tech-badge">System Logic</span>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <h3 data-en="YouTube Content Management" data-fr="Création de contenu YouTube">Création de contenu
+                    YouTube</h3>
+                <p data-en="Managing an entertainment channel. Analyzed retention statistics, applied algorithmic optimization, and directed short-form content. Data-driven approach to audience engagement."
+                    data-fr="Gestion d'une chaîne de divertissement. Analyse des statistiques de rétention, optimisation algorithmique et direction de contenu court. Approche pilotée par la donnée pour l'engagement d'audience.">
+                    Gestion d'une chaîne de divertissement. Analyse des statistiques de rétention, optimisation
+                    algorithmique et direction de contenu court. Approche pilotée par la donnée pour l'engagement
+                    d'audience.</p>
+                <div class="project-stack small">
+                    <span class="tech-badge">Content Creation</span>
+                    <span class="tech-badge">Video Editing</span>
+                </div>
+            </div>
+
+
+
         </div>
     </section>
 
     <!-- SECTION: TECHNICAL BREAKDOWN -->
     <section id="technical-breakdown">
-        <h2 data-en="Technical Breakdown" data-fr="Analyse Technique">Analyse Technique</h2>
+        <div class="section-header">
+            <i class="fas fa-code tech-icon"></i>
+            <h2 class="section-title" data-en="Technical Deep-Dive" data-fr="Analyse Technique du Code">Analyse
+                Technique du Code</h2>
+        </div>
         <div class="tech-card">
-            <h3 data-en="8-Direction Aiming System (Godot 4)" data-fr="Système de Visée 8-Directions (Godot 4)">Système de Visée 8-Directions (Godot 4)</h3>
-            <p data-en="Implementation of a responsive aiming system for the 'Jojo Jambo' shooter. The logic uses normalized vectors to handle diagonal movement accurately." data-fr="Implémentation d'un système de visée réactif pour le shooter 'Jojo Jambo'. La logique utilise des vecteurs normalisés pour gérer précisément les mouvements diagonaux.">Implémentation d'un système de visée réactif pour le shooter 'Jojo Jambo'. La logique utilise des vecteurs normalisés pour gérer précisément les mouvements diagonaux.</p>
+            <h3 data-en="8-Direction Aiming Vector Logic (Godot 4)"
+                data-fr="Logique Vectorielle : Visée 8-Directions (Godot 4)">Logique Vectorielle : Visée 8-Directions
+                (Godot 4)</h3>
+            <p data-en="Conceived and implemented a responsive aiming system. The logic relies on normalized vectors to ensure precise control mapping without exceeding standard velocity bounds."
+                data-fr="Conception et implémentation d'un système de visée ultra-réactif. La logique se base sur des vecteurs normalisés pour garantir un contrôle de précision sans excéder les limites de vélocité standards.">
+                Conception et implémentation d'un système de visée ultra-réactif. La logique se base sur des vecteurs
+                normalisés pour garantir un contrôle de précision sans excéder les limites de vélocité standards.</p>
             <div class="code-container">
                 <pre><code>
 func _update_aim_direction() -> void:
@@ -139,182 +225,185 @@ func _update_aim_direction() -> void:
     input_dir.y = Input.get_axis("ui_up", "ui_down")
     
     if input_dir == Vector2.ZERO:
+        # Fallback to the character's facing direction
         input_dir.x = -1 if animated_sprite.flip_h else 1
     
+    # Normalizing enforces maximum unit length of 1
     aim_direction = input_dir.normalized()
     gun_tip.rotation = aim_direction.angle()
                 </code></pre>
             </div>
-            <p class="tech-note" data-en="Logic: <code>normalized()</code> ensures that diagonal movement isn't faster than horizontal/vertical movement (maintaining unit length)." 
-               data-fr="Logique : <code>normalized()</code> garantit que le mouvement diagonal n'est pas plus rapide que le mouvement horizontal/vertical (maintien de la longueur unitaire).">
-               <strong>Logique :</strong> <code>normalized()</code> garantit que le mouvement diagonal n'est pas plus rapide que le mouvement horizontal/vertical (maintien de la longueur unitaire).
+            <p class="tech-note"
+                data-en="Design Note: <code>normalized()</code> prevents the common diagonal speed exploit by maintaining uniform output vector length, showcasing attention to engine mathematical constraints."
+                data-fr="Note Conceptuelle : `normalized()` empêche l'exploit classique de vitesse diagonale en unifiant le vecteur, prouvant une attention stricte aux contraintes mathématiques du moteur.">
+                <strong>Note Conceptuelle :</strong> <code>normalized()</code> empêche l'exploit classique de vitesse
+                diagonale en unifiant le vecteur, prouvant une attention stricte aux contraintes mathématiques du
+                moteur.
             </p>
         </div>
     </section>
 
     <!-- SECTION: HARDWARE & LOW-LEVEL -->
     <section id="hardware">
-        <h2 data-en="Hardware & Low-level" data-fr="Électronique & Bas-niveau">Électronique & Bas-niveau</h2>
+        <div class="section-header">
+            <i class="fas fa-microchip tech-icon"></i>
+            <h2 class="section-title" data-en="Hardware Architecture" data-fr="Architecture Matérielle">Architecture
+                Matérielle</h2>
+        </div>
         <div class="hardware-grid">
             <div class="hardware-item">
-                <i class="fas fa-microchip"></i>
-                <h3 data-en="Embedded Systems" data-fr="Systèmes Embarqués">Systèmes Embarqués</h3>
-                <p data-en="Experience with Arduino and logic gates (74LS series) for circuit design." data-fr="Expérience avec Arduino et les portes logiques (série 74LS) pour la conception de circuits.">Expérience avec Arduino et les portes logiques (série 74LS) pour la conception de circuits.</p>
+                <i class="fas fa-memory"></i>
+                <h3 data-en="Embedded Systems & Circuits" data-fr="Systèmes Embarqués & Circuits">Systèmes Embarqués &
+                    Circuits</h3>
+                <p data-en="Built functional automation circuits for smart climate/lighting control on breadboards. Programmed Arduino logic and integrated 74LS series gates."
+                    data-fr="Conception de circuits d'automatisation fonctionnels pour le contrôle du climat/lumière sur breadboards. Programmation logique Arduino et intégration de la série 74LS.">
+                    Conception de circuits d'automatisation fonctionnels pour le contrôle du climat/lumière sur
+                    breadboards. Programmation logique Arduino et intégration de la série 74LS.</p>
             </div>
             <div class="hardware-item">
-                <i class="fas fa-bolt"></i>
-                <h3 data-en="Analog Logic" data-fr="Logique Analogique">Logique Analogique</h3>
-                <p data-en="Design of square wave generators using NE555 timers for synchronization." data-fr="Conception de générateurs de signaux carrés utilisant des timers NE555 pour la synchronisation.">Conception de générateurs de signaux carrés utilisant des timers NE555 pour la synchronisation.</p>
+                <i class="fas fa-wave-square"></i>
+                <h3 data-en="Analog Logic Engineering" data-fr="Ingénierie Analogique">Ingénierie Analogique</h3>
+                <p data-en="Designed square wave signal generators explicitly using NE555 analog timers mapped for digital synchronization (74LS90/47 display loops)."
+                    data-fr="Design de générateurs de signaux carrés utilisant explicitement des horloges NE555 synchronisées avec des boucles d'affichage numériques (74LS90/47).">
+                    Design de générateurs de signaux carrés utilisant explicitement des horloges NE555 synchronisées
+                    avec des boucles d'affichage numériques (74LS90/47).</p>
             </div>
         </div>
     </section>
 
     <section id="skills">
-        <h2 data-en="Technical Skills" data-fr="Compétences Techniques">Compétences Techniques</h2>
+        <h2 class="section-title" data-en="Technical Stack" data-fr="Stack Technologique">Stack Technologique</h2>
         <div class="skills-grid">
-            <div class="skill-tag" data-en="C++ & C#" data-fr="C++ & C#">C++ & C#</div>
-            <div class="skill-tag" data-en="Godot 4 & GDScript" data-fr="Godot 4 & GDScript">Godot 4 & GDScript</div>
-            <div class="skill-tag" data-en="Electronics" data-fr="Électronique">Électronique </div>
-            <div class="skill-tag" data-en="Linux / Pop!_OS" data-fr="Linux / Pop!_OS">Linux / Pop!_OS</div>
-            <div class="skill-tag" data-en="Video Editing" data-fr="Montage & Création Vidéo">Montage & Création Vidéo</div>
-        </div>
-    </section>
-
-    <!-- SECTION: WORK IN PROGRESS -->
-    <section id="wip">
-        <h2 data-en="Work in Progress" data-fr="En cours de développement">En cours de développement</h2>
-        <div class="wip-container">
-            <div class="wip-info">
-                <h3 data-en="Project: Jojo Jambo" data-fr="Projet: Jojo Jambo">Projet: Jojo Jambo</h3>
-                <p data-en="Currently refactoring the node structure for better scalability and implementing a modular inventory system." data-fr="Refactorisation actuelle de la structure des nœuds pour une meilleure extensibilité et implémentation d'un système d'inventaire modulaire.">Refactorisation actuelle de la structure des nœuds pour une meilleure extensibilité et implémentation d'un système d'inventaire modulaire.</p>
+            <div class="skill-category">
+                <h3 data-en="Languages" data-fr="Langages">Langages</h3>
+                <div class="skill-tags">
+                    <span class="skill-tag">C++</span>
+                    <span class="skill-tag">C#</span>
+                    <span class="skill-tag">GDScript</span>
+                    <span class="skill-tag">JavaScript / HTML5</span>
+                </div>
             </div>
-            <div class="wip-placeholder">
-                <div class="placeholder-box">
-                    <i class="fas fa-image"></i>
-                    <span data-en="[ Place your Godot Architecture here ]" data-fr="[ Déposez votre architecture Godot ici ]">[ Déposez votre architecture Godot ici ]</span>
+            <div class="skill-category">
+                <h3 data-en="Engines & Tools" data-fr="Moteurs & Outils">Moteurs & Outils</h3>
+                <div class="skill-tags">
+                    <span class="skill-tag">Godot 4</span>
+                    <span class="skill-tag">Git / GitHub</span>
+                    <span class="skill-tag">Blender</span>
+                    <span class="skill-tag">DaVinci Resolve</span>
+                </div>
+            </div>
+            <div class="skill-category">
+                <h3 data-en="Environment & Hardware" data-fr="Environnement & Hardware">Environnement & Hardware</h3>
+                <div class="skill-tags">
+                    <span class="skill-tag">Linux / Pop!_OS</span>
+                    <span class="skill-tag">Arduino Integration</span>
+                    <span class="skill-tag">Analog Circuits</span>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="projects">
-        <h2 data-en="My Projects" data-fr="Mes Projets">Mes Projets</h2>
-        <div class="projects-grid">
+    <section id="about" class="alt-bg">
+        <h2 class="section-title" data-en="My Vision & Academic Mission" data-fr="Ma Démarche & Mon Projet">Ma Démarche
+            & Mon Projet</h2>
+        <div class="about-card">
+            <blockquote class="vision-quote"
+                data-en="&ldquo;I don't just see a game mechanic; I design the systemic CPU flow and inter-system pipeline it dictates.&rdquo;"
+                data-fr="&ldquo;Je ne vois pas seulement une mécanique de jeu ; je conçois le flux systémique CPU et le pipeline inter-systèmes qu'elle dicte.&rdquo;">
+                &ldquo;Je ne vois pas seulement une mécanique de jeu ; je conçois le flux systémique CPU et le pipeline
+                inter-systèmes qu'elle dicte.&rdquo;
+            </blockquote>
 
-            <div class="project-card" 
-                data-en-title="Valdoria: Echoes of Betrayal"
-                data-fr-title="Valdoria: Echoes of Betrayal"
-                data-en-description="A 3D RPG game developed with Godot 4. Implementation of complex gameplay mechanics (double jump, state management) and strategic boss battles. Advanced features: dynamic inventory, branching quests, and high-performance optimization."
-                data-fr-description="Un jeu RPG 3D développé avec le moteur Godot 4. Implémentation de mécaniques de gameplay complexes (double saut, gestion des états) et conception de combats de boss stratégiques. Fonctionnalités avancées : inventaire dynamique, quêtes ramifiées, et optimisation pour performances élevées.">
-                <h3 data-en="Valdoria: Echoes of Betrayal" data-fr="Valdoria: Echoes of Betrayal">Valdoria: Echoes of Betrayal</h3>
-                <div class="project-carousel">
-                    <img src="perso principal male.jpg" alt="Perso Principal Male">
-                    <img src="perso principal female.png" alt="Perso Principal Female">
-                    <img src="Viktor.jpg" alt="Viktor">
-                    <img src="La reine des ombres.jpg" alt="La reine des ombres">
-                    <img src="barron de fer.jpg" alt="Barron de fer">
-                    <img src="le pretre.jpg" alt="Le prêtre">
+            <div class="intent-content">
+                <p data-en="My understanding of Game Development is twofold: it is born from physical engineering (analog and digital circuit architecture) and transitions into algorithmic aesthetics within the engine. Managing logic gates directly translates into efficient, decoupled code structures in C++ and Godot."
+                    data-fr="Ma compréhension du Game Development est double : elle naît de l'ingénierie physique (architecture analogique et numérique sur circuits électroniques) et se transpose vers l'algorithmie et l'esthétique in-engine. Gérer des portes logiques matérielles se traduit directement par des structures de code performantes et découplées en C++ et Godot.">
+                    Ma compréhension du Game Development est double : elle naît de l'ingénierie physique (architecture
+                    analogique et numérique sur circuits électroniques) et se transpose vers l'algorithmie et
+                    l'esthétique in-engine. Gérer des portes logiques matérielles se traduit directement par des
+                    structures de code performantes et découplées en C++ et Godot.
+                </p>
+                <div class="intent-highlight">
+                    <h4 data-en="The Master's Objective" data-fr="L'Objectif de Master">L'Objectif de Master</h4>
+                    <p data-en="My immediate academic goal is to join a specialized Master’s program in Game Development to master global industry standards. This academic achievement is the foundation of a clear ambition: to acquire elite technical expertise and subsequently implant these standards back into the West African technological ecosystem by establishing an innovative development and incubation studio in Benin."
+                        data-fr="Mon objectif universitaire de court-terme est d'intégrer un Master spécialisé en Game Development au sein d'une filière sélective à dimension internationale. Mon ambition à moyen et long-terme est claire : transférer et implanter ces standards d'excellence au cœur de l'écosystème technologique ouest-africain, par la fondation d'un studio indépendant et incubateur technique au Bénin.">
+                        Mon objectif universitaire de court-terme est d'intégrer un Master spécialisé en Game
+                        Development au sein d'une filière sélective à dimension internationale. Mon ambition à moyen et
+                        long-terme est claire : transférer et implanter ces standards d'excellence au cœur de
+                        l'écosystème technologique ouest-africain, par la fondation d'un studio indépendant et
+                        incubateur technique au Bénin.
+                    </p>
                 </div>
-                <p data-en="A 3D RPG game developed with Godot 4. Features complex gameplay mechanics and strategic boss battles." data-fr="Un jeu RPG 3D développé avec le moteur Godot 4. Implémentation de mécaniques de gameplay complexes et conception de combats de boss stratégiques.">Un jeu RPG 3D développé avec le moteur Godot 4. Implémentation de mécaniques de gameplay complexes et
-                    conception de combats de boss stratégiques.</p>
-                <a href="https://john.itch.io/valdoria" target="_blank" class="ui-btn itch-btn" data-en="Play in Browser" data-fr="Jouer sur Browser"><i class="fab fa-itch-io"></i> Jouer sur Browser</a>
-            </div>
-
-            <div class="project-card" 
-                data-en-title="C# Calculator"
-                data-fr-title="Calculatrice en C#"
-                data-en-description="Development of a simple C# calculator with a console interface, using basic operators and error handling for robust use. Includes advanced features like parenthesis management and numeric base conversion."
-                data-fr-description="Développement d'une calculatrice simple en C# avec interface console, utilisant les opérateurs de base et la gestion des erreurs pour une utilisation robuste. Inclut des fonctionnalités avancées comme la gestion des parenthèses et la conversion de bases numériques.">
-                <h3 data-en="C# Calculator" data-fr="Calculatrice en C#">Calculatrice en C#</h3>
-                <p data-en="A robust console calculator with advanced mathematical support." data-fr="Une calculatrice console robuste avec support mathématique avancé.">Développement d'une calculatrice simple en C# avec interface console, utilisant les opérateurs de
-                    base et la gestion des erreurs pour une utilisation robuste.</p>
-            </div>
-
-            <div class="project-card" 
-                data-en-title="Circuit Design"
-                data-fr-title="Conception de Circuits"
-                data-en-description="Creation of a self-managing house project for light and air conditioning. Functional electronic circuits on breadboard, including NE555 timers and 74LS series logic gates (74LS90, 74LS47) for display and synchronization."
-                data-fr-description="Création d'un projet de maison d'auto gestion de l'éclairage et de la climatisation. Circuits électroniques fonctionnels sur plaque d'essai, incluant des timers NE555 et des portes logiques de la série 74LS (74LS90, 74LS47) pour l'affichage et la synchronisation.">
-                <h3 data-en="Circuit Design" data-fr="Conception de Circuits">Conception de Circuits</h3>
-                <p data-en="Smart home automation projects featuring NE555 and 74LS logic." data-fr="Projets d'automatisation de maison intelligente utilisant la logique NE555 et 74LS.">Création d'un projet de maison d'auto gestion de la lumière et du conditionnement d'air. Création de
-                    circuits électroniques fonctionnels sur breadboard, incluant l'utilisation de timers NE555 et de
-                    portes logiques de la série 74LS (74LS90, 74LS47) pour de l'affichage et de la synchronisation. </p>
-            </div>
-
-            <div class="project-card" 
-                data-en-title="International Mélodyès"
-                data-fr-title="International Mélodyès"
-                data-en-description="Management of a musical entertainment YouTube channel. Retention statistics analysis, algorithmic optimization, and creation of impactful short-form content. Use of data analysis tools to maximize engagement."
-                data-fr-description="Gestion d'une chaîne YouTube de divertissement musical. Analyse des statistiques de rétention, optimisation algorithmique et création de contenus percutants au format court. Utilisation d'outils d'analyse de données pour maximiser l'engagement.">
-                <h3 data-en="International Mélodyès" data-fr="International Mélodyès">International Mélodyès</h3>
-                <p data-en="YouTube channel management with data-driven content strategy." data-fr="Gestion de chaîne YouTube avec stratégie de contenu basée sur les données.">Gestion d'une chaîne YouTube de divertissement musical. Analyse des statistiques de rétention,
-                    optimisation algorithmique et création de contenus percutants au format court.</p>
-            </div>
-
-            <div class="project-card" 
-                data-en-title="Jojo Jambo: Tactical 2D Shooter"
-                data-fr-title="Jojo Jambo: Tactical 2D Shooter"
-                data-en-description="Concept: A nervous 2D shooter in a dense jungle. Responsibilities: Sprite design, engine programming (Godot 4), audio integration. Technical challenge: Complex collision management and an 8-direction aiming system optimized for player enjoyment."
-                data-fr-description="Concept : Un shooter 2D nerveux en jungle dense. Responsabilités : Design des sprites, programmation du moteur (Godot 4), intégration audio. Défi technique : Gestion des collisions complexes et système de visée à 8 directions optimisé pour le plaisir de jeu.">
-                <h3 data-en="Jojo Jambo (2D Shooter)" data-fr="Jojo Jambo (Shooter 2D)">Jojo Jambo (Shooter 2D)</h3>
-                <img src="premier_platformer.png" alt="Capture d'écran du Platformer 2D" style="width:100%; border-radius:6px; margin: 10px 0; object-fit:cover; max-height:180px; border: 1px solid var(--accent-color);">
-                <p data-en="2D platformer shooter. Focus on movement fluidity and aiming mechanics." data-fr="Shooter de plateforme 2D. Focus sur la fluidité des mouvements et les mécaniques de tir.">Mon premier jeu de plateforme 2D avec Godot 4. Un projet d'apprentissage autour des bases du game dev : collisions, animations, level design et mécanique de saut.</p>
-                <a href="https://john.itch.io/jojo-jambo" target="_blank" class="ui-btn itch-btn" data-en="Play in Browser" data-fr="Jouer sur Browser"><i class="fab fa-itch-io"></i> Jouer sur Browser</a>
-            </div>
-
-        </div>
-    </section>
-    <section id="valdoria-pictures">
-        <h2 data-en="Valdoria Project Pictures" data-fr="Photos du projet Valdoria">Photos du projet Valdoria</h2>
-        <div class="pictures-grid">
-            <div class="picture-frame">
-                <img src="perso principal male.jpg" alt="Personnage principal masculin">
-            </div>
-            <div class="picture-frame">
-                <img src="perso principal female.png" alt="Personnage principal féminin">
-            </div>
-            <div class="picture-frame">
-                <img src="Viktor.jpg" alt="Viktor">
-            </div>
-            <div class="picture-frame">
-                <img src="barron de fer.jpg" alt="Baron de fer">
-            </div>
-            <div class="picture-frame">
-                <img src="le pretre.jpg" alt="Le prêtre">
-            </div>
-            <div class="picture-frame">
-                <img src="La reine des ombres.jpg" alt="La reine des ombres">
             </div>
         </div>
     </section>
 
+    <section id="experience">
+        <h2 class="section-title" data-en="Timeline" data-fr="Chronologie Cursus">Chronologie Cursus</h2>
+        <div class="experience-grid">
+            <div class="experience-item">
+                <div class="exp-date">2024 - 2026</div>
+                <h3 data-en="Electrical & Computer Engineering (L2)" data-fr="Licence Génie Électrique et Informatique">
+                    Licence Génie Électrique et Informatique</h3>
+                <h4 class="exp-org" data-en="INSTI (Benin)" data-fr="INSTI (Bénin)">INSTI (Bénin)</h4>
+                <p data-en="Studies in electrotechnics, electronics, logic design, and embedded systems architecture."
+                    data-fr="Études en électrotechnique, électronique de puissance, conception logique et architecture embarquée.">
+                    Études en électrotechnique, électronique de puissance, conception logique et architecture embarquée.
+                </p>
+            </div>
+            <div class="experience-item">
+                <div class="exp-date" data-en="2025 - Present" data-fr="2025 - Présent">2025 - Présent</div>
+                <h3 data-en="Independent Game Developer" data-fr="Game Developer Indépendant">Game Developer Indépendant
+                </h3>
+                <h4 class="exp-org" data-en="Freelance / Studio Research" data-fr="Indépendant / Itch.io">Indépendant /
+                    Itch.io</h4>
+                <p data-en="Spearheading solo development of 2D & 3D projects using Godot 4. Engineering robust game loops and system design architectures."
+                    data-fr="Développement en solo de projets 2D & 3D sous Godot 4. Ingénierie de boucles de jeu robustes et conception de systèmes isolés.">
+                    Développement en solo de projets 2D & 3D sous Godot 4. Ingénierie de boucles de jeu robustes et
+                    conception de systèmes isolés.</p>
+            </div>
+        </div>
+    </section>
 
-    <section id="contact" style="text-align: center;">
-        <h2 data-en="Ready to collaborate?" data-fr="Prêt à collaborer ?">Prêt à collaborer ?</h2>
-        <p data-en="Whether it's for game development, programming, or electronics discussion, feel free to contact me." data-fr="Que ce soit pour du développement de jeu, de la programmation ou échanger sur l'électronique, n'hésitez pas à me contacter.">Que ce soit pour du développement de jeu, de la programmation ou échanger sur l'électronique, n'hésitez pas à
-            me contacter.</p>
-        <form action="mailto:kemerdyjohn@gmail.com" method="post" enctype="text/plain" class="contact-form">
-            <input type="text" name="name" placeholder="Votre nom" required>
-            <input type="email" name="email" placeholder="Votre email" required>
-            <textarea name="message" placeholder="Votre message" rows="5" required></textarea>
-            <button type="submit" class="contact-btn">Envoyer</button>
-        </form>
+    <section id="contact" class="contact-section">
+        <div class="contact-container">
+            <h2 class="section-title" data-en="Ready for the Next Challenge." data-fr="Échangeons sur l'avenir.">
+                Échangeons sur l'avenir.</h2>
+            <p class="contact-pitch"
+                data-en="I am actively preparing for the upcoming academic year and highly open to professional integration opportunities (studio or collaborations) in Tech Art and Gameplay Programming."
+                data-fr="Je suis activement en phase de préparation pour la rentrée académique prochaine et ouvert aux opportunités d'intégration professionnelle en Tech Art et Programmation Gameplay. Les discussions techniques ou académiques sont les bienvenues.">
+                Je suis activement en phase de préparation pour la rentrée académique prochaine et ouvert aux
+                opportunités d'intégration professionnelle en Tech Art et Programmation Gameplay. Les discussions
+                techniques ou académiques sont les bienvenues.</p>
+
+            <div class="contact-links">
+                <div class="contact-method"
+                    onclick="navigator.clipboard.writeText('kemerdyjohn@gmail.com'); alert('Email copié dans le presse-papier !');">
+                    <i class="fas fa-envelope"></i>
+                    <span class="contact-detail">kemerdyjohn@gmail.com</span>
+                    <span class="copy-hint" data-en="(Click to copy)" data-fr="(Cliquer pour copier)">(Cliquer pour
+                        copier)</span>
+                </div>
+                <a href="https://www.linkedin.com/in/john-dev88" target="_blank" class="contact-method link">
+                    <i class="fab fa-linkedin"></i>
+                    <span class="contact-detail">LinkedIn Profile</span>
+                </a>
+                <a href="https://github.com/shinkiflinn-ops" target="_blank" class="contact-method link">
+                    <i class="fab fa-github"></i>
+                    <span class="contact-detail">GitHub Profile</span>
+                </a>
+            </div>
+            <p style="margin-top:20px; font-size:14px; color:#888;" data-en="Let's build the future."
+                data-fr="Construisons le futur.">Construisons le futur.</p>
+        </div>
     </section>
 
     <footer>
-        <p data-en="&copy; 2026 John. All rights reserved." data-fr="&copy; 2026 John. Tous droits réservés.">&copy; 2026 John. Tous droits réservés.</p>
+        <p data-en="&copy; 2026 John AYIVI. Built intelligently."
+            data-fr="&copy; 2026 John AYIVI. Conçu avec intelligence technique.">&copy; 2026 John AYIVI. Conçu avec
+            intelligence technique.</p>
     </footer>
 
-    <!-- Modal for project details -->
-    <div id="project-modal" class="modal">
-        <div class="modal-content">
-            <span class="close">&times;</span>
-            <h2 id="modal-title"></h2>
-            <p id="modal-description"></p>
-        </div>
-    </div>
-
-    <!-- Modal for images -->
+    <!-- Image Expansion Modal (Maintained for Screenshots) -->
     <div id="image-modal" class="modal">
         <span class="close-img">&times;</span>
         <img class="img-modal-content" id="expanded-img">
@@ -322,7 +411,6 @@ func _update_aim_direction() -> void:
     </div>
 
     <script src="script.js"></script>
-
 </body>
 
 </html>
