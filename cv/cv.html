@@ -141,6 +141,11 @@
             top: 3px;
         }
 
+        /* ── Profil ───────────────────────────────────────────── */
+        .profil-text { font-size: 0.85rem; line-height: 1.6; color: #c5c9d9; }
+        .profil-obj { margin-top: 8px; }
+        .profil-accent { color: var(--accent); }
+
         /* ── Langues ──────────────────────────────────────────── */
         .lang-grid {
             display: grid;
@@ -181,6 +186,9 @@
             .cv-header .role { color: #444 !important; font-size: 8pt; margin: 2px 0 7px; }
             .contact-row { font-size: 8pt; color: #444 !important; gap: 6px 16px; }
             .contact-row a { color: #1a3a7a !important; }
+
+            .profil-text { color: #111 !important; font-size: 8.5pt; }
+            .profil-accent { color: #1a3a7a !important; }
 
             .cv-section { margin-bottom: 8px; }
             .cv-section h2 {
@@ -233,11 +241,11 @@
     <!-- Profil -->
     <div class="cv-section">
         <h2>Profil</h2>
-        <p style="font-size:0.85rem; line-height:1.6; color:#c5c9d9;">
+        <p class="profil-text">
             Étudiant en Génie Électrique avec une spécialisation progressive vers le développement de jeux vidéo et les systèmes interactifs. Je développe des projets combinant programmation, logique et création visuelle, avec une attention particulière à l'optimisation, à la conception de systèmes et à l'expérience utilisateur.
         </p>
-        <p style="font-size:0.85rem; margin-top:8px; color:#c5c9d9;">
-            🎯 <strong style="color:var(--accent);">Objectif :</strong> Intégrer un master spécialisé en jeu vidéo afin de renforcer mes compétences en game development, game design et production interactive, et contribuer à des projets ambitieux.
+        <p class="profil-text profil-obj">
+            🎯 <strong class="profil-accent">Objectif :</strong> Intégrer un master spécialisé en jeu vidéo afin de renforcer mes compétences en game development, game design et production interactive, et contribuer à des projets ambitieux.
         </p>
     </div>
 
