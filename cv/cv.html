@@ -4,242 +4,310 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CV John Ayivi - Développeur Game & Hardware</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary: #2563eb;
-            --text-dark: #1f2937;
-            --text-gray: #4b5563;
-            --bg-light: #f9fafb;
-            --border: #e5e7eb;
+            --accent: #4f8ef7;
+            --dark: #0f1117;
+            --surface: #1a1d27;
+            --surface2: #22263a;
+            --text: #e8eaf0;
+            --muted: #8b92a8;
+            --border: #2d3250;
         }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
 
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #f3f4f6;
-            color: var(--text-dark);
-            line-height: 1.5;
-            padding: 40px 20px;
+            background: var(--dark);
+            color: var(--text);
+            line-height: 1.65;
         }
 
-        .cv-container {
-            max-width: 800px;
-            margin: 0 auto;
-            background: white;
-            padding: 50px;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-            border-radius: 8px;
+        .cv-wrapper {
+            max-width: 860px;
+            margin: 40px auto;
+            padding: 20px;
         }
 
-        header {
-            text-align: center;
-            border-bottom: 2px solid var(--primary);
-            padding-bottom: 20px;
-            margin-bottom: 30px;
+        /* ─── Header ──────────────────────────────────────── */
+        .cv-header {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 36px 40px;
+            margin-bottom: 24px;
         }
 
-        h1 {
-            font-size: 32px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-bottom: 5px;
+        .cv-header h1 {
+            font-size: 2rem;
+            font-weight: 700;
+            letter-spacing: 0.04em;
+            color: var(--accent);
+            margin-bottom: 6px;
         }
 
-        .subtitle {
+        .cv-header .role {
+            font-size: 0.95rem;
             font-weight: 600;
-            color: var(--primary);
-            font-size: 18px;
-            margin-bottom: 10px;
-        }
-
-        .links {
-            font-size: 14px;
-            color: var(--text-gray);
-        }
-
-        .links a {
-            color: var(--primary);
-            text-decoration: none;
-            margin: 0 10px;
-        }
-
-        h2 {
-            font-size: 18px;
-            color: var(--primary);
+            color: var(--muted);
             text-transform: uppercase;
+            letter-spacing: 0.08em;
+            margin-bottom: 18px;
+        }
+
+        .contact-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 14px;
+            font-size: 0.9rem;
+            color: var(--muted);
+        }
+
+        .contact-row a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+
+        .contact-row a:hover { text-decoration: underline; }
+
+        /* ─── Section ─────────────────────────────────────── */
+        .cv-section {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 28px 36px;
+            margin-bottom: 20px;
+        }
+
+        .cv-section h2 {
+            font-size: 0.78rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.14em;
+            color: var(--accent);
             border-bottom: 1px solid var(--border);
-            padding-bottom: 5px;
-            margin-bottom: 15px;
-            margin-top: 25px;
-        }
-
-        .section-content {
+            padding-bottom: 10px;
             margin-bottom: 20px;
         }
 
-        .profile-text {
-            color: var(--text-gray);
-            font-size: 15px;
+        /* ─── Skills ──────────────────────────────────────── */
+        .skills-list { list-style: none; }
+
+        .skills-list li {
+            padding: 6px 0;
+            font-size: 0.9rem;
+            border-bottom: 1px solid var(--border);
+            color: var(--text);
         }
 
-        .skill-group {
-            margin-bottom: 15px;
-        }
+        .skills-list li:last-child { border-bottom: none; }
 
-        .skill-title {
-            font-weight: 700;
-            font-size: 14px;
-            margin-bottom: 5px;
-        }
+        .skills-list strong { color: var(--accent); margin-right: 4px; }
 
-        .skill-list {
-            list-style: none;
-            font-size: 14px;
-            color: var(--text-gray);
-        }
+        /* ─── Projects & Education ────────────────────────── */
+        .entry { margin-bottom: 24px; }
+        .entry:last-child { margin-bottom: 0; }
 
-        .project {
-            margin-bottom: 20px;
-        }
-
-        .project-title {
-            font-weight: 700;
-            font-size: 16px;
-        }
-
-        .project-desc {
-            font-size: 14px;
-            color: var(--text-gray);
-            margin-bottom: 5px;
-        }
-
-        .project-details {
-            list-style: inside square;
-            font-size: 14px;
-            color: var(--text-gray);
-            padding-left: 10px;
-        }
-
-        .education-item {
+        .entry-header {
             display: flex;
             justify-content: space-between;
             align-items: baseline;
+            flex-wrap: wrap;
+            gap: 4px;
+            margin-bottom: 6px;
         }
 
-        .education-title {
-            font-weight: 700;
-            font-size: 16px;
+        .entry-header h3 {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--text);
         }
 
-        .education-date {
-            font-size: 14px;
-            color: var(--text-gray);
+        .entry-date {
+            font-size: 0.8rem;
+            color: var(--muted);
+            white-space: nowrap;
         }
 
+        .entry-sub {
+            font-size: 0.82rem;
+            color: var(--muted);
+            margin-bottom: 8px;
+        }
+
+        .entry ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .entry ul li {
+            font-size: 0.88rem;
+            color: #c5c9d9;
+            padding: 3px 0 3px 16px;
+            position: relative;
+        }
+
+        .entry ul li::before {
+            content: '▸';
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+            font-size: 0.75rem;
+            top: 4px;
+        }
+
+        /* ─── Languages ───────────────────────────────────── */
+        .lang-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 14px;
+        }
+
+        .lang-item { font-size: 0.9rem; }
+        .lang-item strong { color: var(--accent); display: block; margin-bottom: 2px; }
+        .lang-item span { color: var(--muted); font-size: 0.82rem; }
+
+        /* ─── Print ───────────────────────────────────────── */
         @media print {
-            body {
-                background: white;
-                padding: 0;
-            }
-            .cv-container {
-                box-shadow: none;
-                padding: 0;
-                margin: 0;
-                width: 100%;
-            }
+            body { background: white; color: black; }
+            .cv-wrapper { margin: 0; }
+            .cv-header, .cv-section { border-color: #ccc; background: white; }
+            .cv-header h1, .cv-section h2, .entry-header h3,
+            .skills-list strong, .lang-item strong { color: #1a56db; }
+            .contact-row a { color: #1a56db; }
+        }
+
+        @media (max-width: 600px) {
+            .cv-header { padding: 24px 20px; }
+            .cv-section { padding: 20px; }
+            .lang-grid { grid-template-columns: 1fr; }
         }
     </style>
 </head>
 <body>
-    <div class="cv-container">
-        <header>
-            <h1>John AYIVI</h1>
-            <p class="subtitle">Développeur Game & Systèmes Hardware/Software</p>
-            <div class="links">
-                <a href="https://github.com/shinkiflinn-ops">GitHub</a> | 
-                <a href="https://shinkiflinn-ops.github.io/portfolio/">Portfolio</a>
-            </div>
-            <p style="font-style: italic; margin-top: 10px; color: var(--text-gray); font-size: 14px;">Passionné par l'intersection de l'ingénierie et de la création numérique.</p>
-        </header>
+<div class="cv-wrapper">
 
-        <section>
-            <h2>🎯 Profil & Objectif</h2>
-            <div class="section-content profile-text">
-                Étudiant visionnaire en Génie Électrique et Informatique, passionné par la fusion du <strong>Hardware</strong> et du <strong>Software</strong>. Mon ambition est de maîtriser les standards d'excellence du Game Development international pour fonder le premier studio et centre de formation technique de référence au Bénin. Je combine une rigueur d'ingénieur industriel avec la créativité d'un développeur de jeux vidéo indépendant pour concevoir des expériences interactives innovantes.
-            </div>
-        </section>
-
-        <section>
-            <h2>🛠 Compétences Techniques</h2>
-            <div class="section-content">
-                <div class="skill-group">
-                    <p class="skill-title">Software & Game Development</p>
-                    <ul class="skill-list">
-                        <li>• Moteurs : Godot Engine (Expertise GDScript)</li>
-                        <li>• Langages : C++, C#, JavaScript (HTML5/CSS3), GDScript</li>
-                        <li>• Architecture : Programmation Orientée Objet (POO), Gestion modulaire par Signaux, State Machines complexes</li>
-                    </ul>
-                </div>
-                <div class="skill-group">
-                    <p class="skill-title">Hardware & Ingénierie</p>
-                    <ul class="skill-list">
-                        <li>• Électronique : Conception de circuits (NE555, compteurs), Électronique de puissance</li>
-                        <li>• Systèmes : Schémas pneumatiques, Automatisme industriel, Informatique industrielle</li>
-                    </ul>
-                </div>
-            </div>
-        </section>
-
-        <section>
-            <h2>🚀 Projets Phares</h2>
-            <div class="section-content">
-                <div class="project">
-                    <p class="project-title">Jojo Jambo | Lead Developer (Godot 4)</p>
-                    <p class="project-desc">Shooter 2D nerveux et modulaire</p>
-                    <ul class="project-details">
-                        <li>Implémentation d'un système de signaux robuste pour découpler les composants</li>
-                        <li>Conception d'un système de visée 8 directions synchronisé avec la logique de combat</li>
-                        <li>Optimisation des pools d'objets pour maintenir 60 FPS constants</li>
-                    </ul>
-                </div>
-                <div class="project">
-                    <p class="project-title">Valdoria: Echoes of Betrayal | Game Dev</p>
-                    <p class="project-desc">Action-RPG narratif avec combat exigeant (Souls-like)</p>
-                    <ul class="project-details">
-                        <li>Programmation d'un système de posture et de parade complexe</li>
-                        <li>Scriptage d'IA de boss avec plusieurs phases de combat</li>
-                    </ul>
-                </div>
-                <div class="project">
-                    <p class="project-title">Portfolio Web & GitHub Pages</p>
-                    <p class="project-desc">Vitrine technique et documentation responsive</p>
-                </div>
-            </div>
-        </section>
-
-        <section>
-            <h2>🎓 Formation</h2>
-            <div class="section-content">
-                <div class="education-item">
-                    <p class="education-title">Licence en Génie Électrique et Informatique (L2)</p>
-                    <p class="education-date">2024 – Présent</p>
-                </div>
-                <p style="font-size: 14px; color: var(--text-gray);">Institut National Supérieur des Technologies Industrielles (INSTI), Bénin</p>
-            </div>
-        </section>
-
-        <section>
-            <h2>🌍 Langues</h2>
-            <div class="section-content skill-list">
-                Français (Maternel) • Anglais (Technique & Professionnel / Documentation et Collaboration)
-            </div>
-        </section>
+    <!-- Header -->
+    <div class="cv-header">
+        <h1>John AYIVI</h1>
+        <p class="role">Candidature — Master / Stage en Programmation de Jeux Vidéo & Systèmes Embarqués</p>
+        <div class="contact-row">
+            <span>📍 Abomey-Calavi, Bénin</span>
+            <span>📞 +229 01 44 75 48 30</span>
+            <a href="mailto:kemerdyjohn@gmail.com">kemerdyjohn@gmail.com</a>
+            <a href="https://shinkiflinn-ops.github.io/Portfolio/" target="_blank">Portfolio</a>
+            <a href="https://www.linkedin.com/in/john-dev88" target="_blank">LinkedIn</a>
+        </div>
     </div>
+
+    <!-- Compétences -->
+    <div class="cv-section">
+        <h2>Compétences</h2>
+        <ul class="skills-list">
+            <li><strong>Développement & Algorithmique :</strong> Programmation orientée objet (C++), GDScript, Conception d'algorithmes et optimisation.</li>
+            <li><strong>Moteurs de Jeu & Outils :</strong> Godot Engine 4, Git, GitHub Pages, Blender (Modélisation & Texturation).</li>
+            <li><strong>Électronique Pratique & Conception :</strong> Conception et assemblage de circuits sur breadboard, logique séquentielle (timers NE555, compteurs 74LS90), test de composants.</li>
+            <li><strong>Environnement :</strong> Linux (Pop!_OS).</li>
+            <li><strong>Soft Skills :</strong> Esprit d'analyse, travail en équipe, apprentissage autonome et résolution de problèmes.</li>
+        </ul>
+    </div>
+
+    <!-- Projets -->
+    <div class="cv-section">
+        <h2>Projets Académiques & Personnels</h2>
+
+        <div class="entry">
+            <div class="entry-header">
+                <h3>Modélisation et Texturation 3D pour Jeux Vidéo (Blender)</h3>
+                <span class="entry-date">Fév. 2026 – Mars 2026</span>
+            </div>
+            <ul>
+                <li>Modélisé des assets et personnages 3D complexes en respectant les contraintes techniques du temps réel.</li>
+                <li>Optimisé la topologie des maillages (Retopologie) pour garantir une performance fluide dans le moteur Godot.</li>
+                <li>Conçu des dépliages UV et des textures détaillées pour améliorer le rendu visuel des modèles.</li>
+                <li>Création d'un set de 5 modèles d'environnement pour un prototype de RPG.</li>
+            </ul>
+        </div>
+
+        <div class="entry">
+            <div class="entry-header">
+                <h3>Développement d'un Jeu de Plateformes 2D (Godot Engine 4)</h3>
+                <span class="entry-date">Janv. 2025 – Mars 2025</span>
+            </div>
+            <ul>
+                <li>Programmé les mécaniques de mouvement fluides et la gestion des collisions en GDScript.</li>
+                <li>Implémenté une machine à états (FSM) pour gérer les animations et les comportements du joueur.</li>
+                <li>Optimisé la gestion des ressources via le pooling d'objets pour les projectiles.</li>
+            </ul>
+        </div>
+
+        <div class="entry">
+            <div class="entry-header">
+                <h3>Conception et Test de Circuits Électroniques Matériels</h3>
+                <span class="entry-date">Sept. 2025 – Déc. 2025</span>
+            </div>
+            <ul>
+                <li>Conçu et assemblé des circuits électroniques fonctionnels et optimisés sur breadboard.</li>
+                <li>Réalisé un système de gestion de l'éclairage et de conditionnement d'air.</li>
+                <li>Intégré des composants spécifiques (timers NE555 et compteurs 74LS90) pour répondre à des cahiers des charges précis.</li>
+                <li>Testé et validé de manière rigoureuse le matériel pour identifier et corriger les défaillances électriques potentielles.</li>
+            </ul>
+        </div>
+
+        <div class="entry">
+            <div class="entry-header">
+                <h3>Création et Déploiement d'un Site Portfolio Vitrine</h3>
+                <span class="entry-date">Mars 2026 – Avr. 2026</span>
+            </div>
+            <ul>
+                <li>Développé de A à Z une plateforme web pour exposer mes réalisations en développement de jeux vidéo, programmation et électronique.</li>
+                <li>Déployé le projet via l'infrastructure GitHub Pages pour assurer un hébergement continu.</li>
+                <li>Géré régulièrement les versions du code source par l'utilisation assidue des commandes Git et de dépôts distants.</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Formation -->
+    <div class="cv-section">
+        <h2>Formation</h2>
+
+        <div class="entry">
+            <div class="entry-header">
+                <h3>Licence 2 — Génie Électrique et Informatique</h3>
+                <span class="entry-date">Sept. 2024 – Présent</span>
+            </div>
+            <p class="entry-sub">Institut National Supérieur de Technologie Industrielle (INSTI) — Lokossa, Bénin</p>
+            <ul>
+                <li>Algorithmique, Conception de systèmes embarqués, Programmation Orientée Objet (C++), Électronique, Informatique Industrielle, Automatisme, Analyse Numérique.</li>
+            </ul>
+        </div>
+
+        <div class="entry">
+            <div class="entry-header">
+                <h3>Baccalauréat — Spécialité Électrotechnique</h3>
+                <span class="entry-date">2024</span>
+            </div>
+            <p class="entry-sub">Lycée Technique d'Amitié Sino-Béninoise d'Akassato — Abomey-Calavi, Bénin</p>
+        </div>
+    </div>
+
+    <!-- Langues -->
+    <div class="cv-section">
+        <h2>Langues</h2>
+        <div class="lang-grid">
+            <div class="lang-item">
+                <strong>Français</strong>
+                <span>Courant — Langue maternelle</span>
+            </div>
+            <div class="lang-item">
+                <strong>Anglais</strong>
+                <span>Niveau technique — Lecture de documentation &amp; collaboration internationale</span>
+            </div>
+        </div>
+    </div>
+
+</div>
 </body>
 </html>
