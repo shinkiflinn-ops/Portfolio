@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Language switching logic
     const langToggle = document.getElementById('lang-toggle');
-    let currentLang = localStorage.getItem('portfolioLang') || 'fr'; // Restore from storage
+    let currentLang = localStorage.getItem('portfolioLang') || 'en'; // Restore from storage
 
     const updateLanguage = () => {
         document.querySelectorAll('[data-en]').forEach(el => {
