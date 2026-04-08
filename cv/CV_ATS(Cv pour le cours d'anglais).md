@@ -9,7 +9,7 @@ Diligent and solutions-oriented Electrical and Computer Engineering student with
 
 **Technical Skills**
 - **Hardware & Electronics:** Breadboard circuit design and assembly, sequential logic (NE555 timers, 74LS90 counters), hardware component testing and troubleshooting.
-- **Software Development:** Object-Oriented Programming (C++), Algorithm optimization, GDScript.
+- **Software Development & Engines:** Object-Oriented Programming (C++), Algorithm optimization, GDScript, C#. Main Engine: Godot (Expertise in GDExtension / C++ optimization). Industry Standard: Unity (C# Gameplay programming).
 - **System & Tools:** Linux Environment (Pop!_OS), Version Control (Git, GitHub), Web Deployment (GitHub Pages).
 - **Soft Skills:** Analytical thinking, collaborative teamwork, autonomous learning, complex problem-solving.
 
