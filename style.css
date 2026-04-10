@@ -294,14 +294,23 @@ section {
     border: 1px solid var(--ui-border);
 }
 
-.project-hero-img {
+.project-hero-img, .project-video {
     width: 100%;
-    height: 250px;
-    object-fit: contain;
+    height: auto;
+    max-height: 450px;
+    object-fit: cover;
     background-color: #000;
     border-radius: 8px;
     margin: 20px 0;
     border: 1px solid var(--ui-border);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+.project-video {
+    cursor: pointer;
+    max-width: 640px;
+    display: block;
+    margin: 20px auto;
 }
 
 /* Small Cards */

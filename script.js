@@ -86,4 +86,13 @@ document.addEventListener('DOMContentLoaded', () => {
             alert(msg);
         });
     });
+
+    // Set Video Playback Speed
+    const projectVideo = document.querySelector('.project-video');
+    if (projectVideo) {
+        projectVideo.playbackRate = 0.75;
+        projectVideo.addEventListener('play', () => {
+            projectVideo.playbackRate = 0.75;
+        });
+    }
 });
