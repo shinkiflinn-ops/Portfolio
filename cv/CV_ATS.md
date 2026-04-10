@@ -2,7 +2,7 @@
 [Abomey-Calavi, Bénin] | [+229 01 44 75 48 30] | [kemerdyjohn@gmail.com] 
 [https://shinkiflinn-ops.github.io/portfolio/] | [www.linkedin.com/in/john-dev88]
 
-**Candidature pour Master / Stage en Programmation de Jeux Vidéo et Systèmes Embarqués**
+**Candidature pour Master / Stage en Programmation de Jeux Vidéo et Technical Art (avec bases en Ingénierie Système)**
 
 **Profil**
 Étudiant en Génie Électrique avec une spécialisation progressive vers le développement de jeux vidéo et les systèmes interactifs. Je développe des projets combinant programmation, logique et création visuelle, avec une attention particulière à l'optimisation, à la conception de systèmes et à l'expérience utilisateur.
